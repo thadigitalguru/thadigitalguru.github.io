@@ -52,11 +52,11 @@ round-avatar: true
 social-network-links:
   email: ntimama2@gmail.com
   rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  facebook: deanattali
+  facebook: thadigitalguru
   github: thadigitalguru
   twitter: thadigitalguru
   # ---patreon: DeanAttali --- #
-  youtube: "@daattali"
+  # --- youtube: "@daattali" --- # 
   whatsapp: 0790965628
 #  medium: yourname
 #  reddit: yourname or r/yoursubreddit
@@ -65,7 +65,7 @@ linkedin: titus-kores
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
 instagram: thadigitalguru
-#  spotify: yourname
+spotify: tittoh
 #  telephone: +14159998888
 #  steam: deanat78
 #  twitch: yourname
