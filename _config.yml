@@ -95,6 +95,14 @@ comments:
 paginate: 5
 paginate_path: "/blog/page:num/"
 
+# Feed settings
+feed_show_excerpt: true
+feed_show_tags: true
+excerpt_length: 50
+
+# Date format
+date_format: "%B %-d, %Y"
+
 # Your name to show in the footer
 author: Titus Kores
 
