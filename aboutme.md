@@ -1,16 +1,31 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: About Me
+subtitle: Digital Marketing & SEO Expert
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+I'm a passionate SEO specialist and digital marketing expert with 5 years of experience helping businesses grow their online presence. My expertise includes:
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+- Technical SEO Optimization
+- Content Strategy & Creation
+- Social Media Marketing
+- Digital Analytics & Reporting
 
-What else do you need?
+### My Approach
 
-### My story
+I believe in data-driven strategies that deliver measurable results. My process involves:
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+1. Comprehensive website analysis
+2. Custom strategy development
+3. Implementation of best practices
+4. Continuous monitoring and optimization
+
+### Why Work With Me?
+
+- Proven track record of improving search rankings
+- Deep understanding of technical SEO
+- Creative content strategy development
+- Strong analytical skills
+- Clear communication and reporting
+
+Let's work together to grow your online presence and achieve your business goals.
