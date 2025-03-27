@@ -1,5 +1,5 @@
 # Site settings
-title: Titus Kores - Digital Marketing & SEO Expert
+title: ## TDG Digital Marketing & SEO Blog
 description: SEO Specialist & Digital Marketing Expert helping businesses grow their online presence through data-driven strategies.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://thadigitalguru.github.io" # the base hostname & protocol for your site
@@ -8,9 +8,10 @@ url: "https://thadigitalguru.github.io" # the base hostname & protocol for your 
 markdown: kramdown
 theme: jekyll-theme-minimal
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-archives
 
 # Exclude from processing
 exclude:
@@ -46,6 +47,8 @@ author:
   email: tituskores@gmail.com
   twitter: thadigitalguru
   linkedin: titus-kores-610201200
+  Instagram: thadigitalguru
+  Github: thadigitalguru
 
 # Site navigation
 navigation:
