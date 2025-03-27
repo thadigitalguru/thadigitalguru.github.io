@@ -45,10 +45,7 @@ defaults:
 author:
   name: Titus Kores
   email: tituskores@gmail.com
-  twitter: thadigitalguru
-  linkedin: titus-kores-610201200
-  Instagram: thadigitalguru
-  Github: thadigitalguru
+  
 
 # Site navigation
 navigation:
@@ -81,6 +78,8 @@ social:
   instagram: thadigitalguru
   youtube: thadigitalguru
   medium: thadigitalguru
+  linkedin: titus-kores-610201200
+  Github: thadigitalguru
 
 # Site analytics (optional)
 analytics:
