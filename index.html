@@ -3,359 +3,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }}</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Titus Kores - Technical SEO specialist, Growth Marketer, and Content Writer helping businesses grow through data-driven SEO strategies and technical optimization.">
+<meta name="author" content="{{site.author.name}}">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="{{site.url}}">
+<title>{{site.title}} - Technical SEO & Growth Marketing Expert</title>
 
-        :root {
-            --bg-primary: #f5f5f5;
-            --bg-secondary: #fff;
-            --text-primary: #000;
-            --text-secondary: #555;
-            --border-color: #000;
-            --shadow: rgba(0,0,0,0.1);
-        }
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{site.title}} - Technical SEO Expert">
+<meta property="og:description" content="Technical SEO specialist helping businesses grow through data-driven strategies, compelling content, and technical optimization.">
+<meta property="og:url" content="{{site.url}}">
+<meta property="og:image" content="{{site.url}}/assets/img/profile-pic.jpg">
+<meta property="og:site_name" content="{{site.title}}">
 
-        [data-theme="dark"] {
-            --bg-primary: #1a1a1a;
-            --bg-secondary: #2d2d2d;
-            --text-primary: #fff;
-            --text-secondary: #b0b0b0;
-            --border-color: #fff;
-            --shadow: rgba(255,255,255,0.1);
-        }
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@thadigitalguru">
+<meta name="twitter:creator" content="@thadigitalguru">
+<meta name="twitter:title" content="{{site.title}} - Technical SEO Expert">
+<meta name="twitter:description" content="Technical SEO specialist helping businesses grow through data-driven strategies.">
+<meta name="twitter:image" content="{{site.url}}/assets/img/profile-pic.jpg">
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            transition: background 0.3s ease, color 0.3s ease;
-        }
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"Person",
+"name":"Titus Kores",
+"url":"{{site.url}}",
+"image":"{{site.url}}/assets/img/profile-pic.jpg",
+"jobTitle":"Technical SEO Specialist",
+"description":"Technical SEO, Growth Marketer, Content Writer, Python and Personal Development enthusiast",
+"sameAs":[
+"https://x.com/thadigitalguru",
+"https://www.linkedin.com/in/titus-kores-610201200/",
+"https://github.com/thadigitalguru"
+]
+}
+</script>
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"WebSite",
+"name":"{{site.title}}",
+"url":"{{site.url}}",
+"description":"{{site.description}}",
+"author":{"@type":"Person","name":"Titus Kores"}
+}
+</script>
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem 4rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .theme-toggle {
-            padding: 0.5rem 1rem;
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            background: transparent;
-            color: var(--text-primary);
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .theme-toggle:hover {
-            background: var(--border-color);
-            color: var(--bg-primary);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            padding: 0.5rem 1.5rem;
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: var(--border-color);
-            color: var(--bg-primary);
-        }
-
-        main {
-            max-width: 1400px;
-            margin: 4rem auto;
-            padding: 0 4rem;
-        }
-
-        .hero {
-            background: var(--bg-secondary);
-            border-radius: 16px;
-            padding: 4rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            box-shadow: 0 2px 8px var(--shadow);
-            margin-bottom: 4rem;
-            transition: background 0.3s ease;
-        }
-
-        .hero-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            font-weight: 700;
-        }
-
-        .hero-content p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-secondary);
-        }
-
-        .hero-image {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .hero-image img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px var(--shadow);
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background: var(--border-color);
-            color: var(--bg-primary);
-        }
-
-        .articles-section {
-            margin-top: 4rem;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-        }
-
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .article-card {
-            background: var(--bg-secondary);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 2px 8px var(--shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        .article-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 16px var(--shadow);
-        }
-
-        .article-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .article-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-
-        .article-card p {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        .article-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .article-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .tag {
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
-            background: var(--bg-primary);
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 1rem 2rem;
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .logo {
-                font-size: 2rem;
-            }
-
-            .header-right {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .social-links {
-                width: 100%;
-                justify-content: center;
-            }
-
-            main {
-                padding: 0 2rem;
-            }
-
-            .hero {
-                grid-template-columns: 1fr;
-                padding: 2rem;
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .articles-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+<style>*{margin:0;padding:0;box-sizing:border-box}:root{--bg-primary:#f5f5f5;--bg-secondary:#fff;--text-primary:#000;--text-secondary:#555;--border-color:#000;--shadow:rgba(0,0,0,.1)}[data-theme=dark]{--bg-primary:#1a1a1a;--bg-secondary:#2d2d2d;--text-primary:#fff;--text-secondary:#b0b0b0;--border-color:#fff;--shadow:rgba(255,255,255,.1)}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.6;transition:background .3s,color .3s}.skip-link{position:absolute;top:-40px;left:0;background:var(--text-primary);color:var(--bg-primary);padding:.5rem 1rem;z-index:100;text-decoration:none}.skip-link:focus{top:0}header{display:flex;justify-content:space-between;align-items:center;padding:2rem 4rem;max-width:1400px;margin:0 auto}.logo{font-size:2.5rem;font-weight:700;color:var(--text-primary)}.header-right{display:flex;align-items:center;gap:1rem}.theme-toggle{padding:.5rem 1rem;border:2px solid var(--border-color);border-radius:8px;background:0 0;color:var(--text-primary);font-weight:500;cursor:pointer;transition:all .3s}.theme-toggle:hover,.social-links a:hover,.cta-button:hover{background:var(--border-color);color:var(--bg-primary)}.social-links{display:flex;gap:1rem}.social-links a,.cta-button{padding:.5rem 1.5rem;border:2px solid var(--border-color);border-radius:8px;text-decoration:none;color:var(--text-primary);font-weight:500;transition:all .3s}main{max-width:1400px;margin:4rem auto;padding:0 4rem}.hero{background:var(--bg-secondary);border-radius:16px;padding:4rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;box-shadow:0 2px 8px var(--shadow);margin-bottom:4rem;transition:background .3s}.hero-content h1{font-size:2.5rem;margin-bottom:2rem;font-weight:700}.hero-content p{font-size:1.1rem;margin-bottom:1.5rem;color:var(--text-secondary)}.hero-image{display:flex;flex-direction:column;align-items:center;gap:2rem}.hero-image img{width:100%;max-width:400px;border-radius:12px;box-shadow:0 4px 12px var(--shadow)}.cta-button{display:inline-block;padding:1rem 2rem;font-weight:600}.articles-section{margin-top:4rem}.section-title{font-size:2rem;font-weight:700;margin-bottom:2rem}.articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:2rem}.article-card{background:var(--bg-secondary);border-radius:12px;padding:2rem;box-shadow:0 2px 8px var(--shadow);transition:transform .3s,box-shadow .3s;text-decoration:none;color:inherit;display:block}.article-card:hover{transform:translateY(-4px);box-shadow:0 4px 16px var(--shadow)}.article-card h3{font-size:1.5rem;margin-bottom:1rem;color:var(--text-primary)}.article-image{width:100%;height:200px;object-fit:cover;border-radius:8px;margin-bottom:1rem}.article-card p{color:var(--text-secondary);margin-bottom:1rem}.article-meta{display:flex;justify-content:space-between;align-items:center;font-size:.9rem;color:var(--text-secondary)}.article-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}.tag{padding:.25rem .75rem;border-radius:4px;background:var(--bg-primary);font-size:.85rem;color:var(--text-secondary)}@media (max-width:768px){header{padding:1rem 2rem;flex-direction:column;gap:1rem}.logo{font-size:2rem}.header-right{flex-direction:column;width:100%}.social-links{width:100%;justify-content:center}main{padding:0 2rem}.hero{grid-template-columns:1fr;padding:2rem}.hero-content h1{font-size:2rem}.articles-grid{grid-template-columns:1fr}}</style>
 </head>
 <body>
-    <header>
-        <div class="logo">{{ site.title }}</div>
-        <div class="header-right">
-            <button class="theme-toggle" onclick="toggleTheme()">
-                <span id="theme-icon">🌙</span>
-            </button>
-            <div class="social-links">
-                <a href="https://x.com/thadigitalguru" target="_blank">X</a>
-                <a href="https://www.linkedin.com/in/titus-kores-610201200/" target="_blank">LINKEDIN</a>
-                <a href="https://github.com/thadigitalguru" target="_blank">GITHUB</a>
-            </div>
-        </div>
-    </header>
+<a href="#main" class="skip-link">Skip to main content</a>
+<header role="banner">
+<div class="logo">{{site.title}}</div>
+<div class="header-right">
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+<span id="theme-icon" aria-hidden="true">🌙</span>
+</button>
+<nav class="social-links" aria-label="Social media links">
+<a href="https://x.com/thadigitalguru" target="_blank" rel="noopener noreferrer" aria-label="Follow on X (Twitter)">X</a>
+<a href="https://www.linkedin.com/in/titus-kores-610201200/" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn">LINKEDIN</a>
+<a href="https://github.com/thadigitalguru" target="_blank" rel="noopener noreferrer" aria-label="View GitHub profile">GITHUB</a>
+</nav>
+</div>
+</header>
 
-    <main>
-        <div class="hero">
-            <div class="hero-content">
-                <h1>Hi, I'm Titus</h1>
-                <p>I'm a <strong>Technical SEO</strong>, <strong>Growth Marketer</strong>, <strong>Content Writer</strong>, <strong>Python</strong> and <strong>Personal Development</strong> enthusiast.</p>
-                <p>I help businesses grow their online presence through data-driven SEO strategies, compelling content, and technical optimization.</p>
-            </div>
-            <div class="hero-image">
-                <img src="/assets/img/profile-pic.jpg" alt="{{ site.author.name }}">
-                <a href="mailto:{{ site.author.email }}" class="cta-button">START CONVERSATION</a>
-            </div>
-        </div>
+<main id="main" role="main">
+<section class="hero" aria-labelledby="intro-heading">
+<div class="hero-content">
+<h1 id="intro-heading">Hi, I'm Titus</h1>
+<p>I'm a <strong>Technical SEO</strong>, <strong>Growth Marketer</strong>, <strong>Content Writer</strong>, <strong>Python</strong> and <strong>Personal Development</strong> enthusiast.</p>
+<p>I help businesses grow their online presence through data-driven SEO strategies, compelling content, and technical optimization.</p>
+</div>
+<div class="hero-image">
+<img src="/assets/img/profile-pic.jpg" alt="Titus Kores - Technical SEO Specialist" width="400" height="400" loading="eager">
+<a href="mailto:{{site.author.email}}" class="cta-button" aria-label="Send email to start conversation">START CONVERSATION</a>
+</div>
+</section>
 
-        <section class="articles-section">
-            <h2 class="section-title">Recent Articles</h2>
-            <div class="articles-grid">
-                {% for post in site.posts limit:6 %}
-                <a href="{{ post.url | relative_url }}" class="article-card">
-                    <h3>{{ post.title }}</h3>
-                    {% if post.cover-img %}
-                    <img src="{{ post.cover-img }}" alt="{{ post.title }}" class="article-image">
-                    {% elsif post.thumbnail-img %}
-                    <img src="{{ post.thumbnail-img }}" alt="{{ post.title }}" class="article-image">
-                    {% endif %}
-                    {% if post.subtitle %}
-                    <p>{{ post.subtitle }}</p>
-                    {% else %}
-                    <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-                    {% endif %}
-                    <div class="article-meta">
-                        <span>{{ post.date | date: "%B %-d, %Y" }}</span>
-                        <span>{{ post.author }}</span>
-                    </div>
-                    {% if post.tags.size > 0 %}
-                    <div class="article-tags">
-                        {% for tag in post.tags limit:3 %}
-                        <span class="tag">{{ tag }}</span>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
-                </a>
-                {% endfor %}
-            </div>
-        </section>
-    </main>
+<section class="articles-section" aria-labelledby="articles-heading">
+<h2 id="articles-heading" class="section-title">Recent Articles</h2>
+<div class="articles-grid">
+{%for post in site.posts limit:6%}
+<article class="article-card">
+<a href="{{post.url|relative_url}}" aria-label="Read article: {{post.title}}">
+<h3>{{post.title}}</h3>
+{%if post.cover-img%}
+<img src="{{post.cover-img}}" alt="{{post.title}} cover image" class="article-image" loading="lazy" width="350" height="200">
+{%elsif post.thumbnail-img%}
+<img src="{{post.thumbnail-img}}" alt="{{post.title}} thumbnail" class="article-image" loading="lazy" width="350" height="200">
+{%endif%}
+{%if post.subtitle%}
+<p>{{post.subtitle}}</p>
+{%else%}
+<p>{{post.excerpt|strip_html|truncatewords:30}}</p>
+{%endif%}
+<div class="article-meta">
+<time datetime="{{post.date|date:'%Y-%m-%d'}}">{{post.date|date:"%B %-d, %Y"}}</time>
+<span>{{post.author}}</span>
+</div>
+{%if post.tags.size>0%}
+<div class="article-tags" role="list">
+{%for tag in post.tags limit:3%}
+<span class="tag" role="listitem">{{tag}}</span>
+{%endfor%}
+</div>
+{%endif%}
+</a>
+</article>
+{%endfor%}
+</div>
+</section>
+</main>
 
-    <script>
-        // Theme toggle functionality
-        function toggleTheme() {
-            const html = document.documentElement;
-            const themeIcon = document.getElementById('theme-icon');
-            const currentTheme = html.getAttribute('data-theme');
-
-            if (currentTheme === 'dark') {
-                html.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'light');
-                themeIcon.textContent = '🌙';
-            } else {
-                html.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                themeIcon.textContent = '☀️';
-            }
-        }
-
-        // Check for saved theme preference or default to light mode
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            document.getElementById('theme-icon').textContent = '☀️';
-        }
-    </script>
+<script>
+function toggleTheme(){const e=document.documentElement,t=document.getElementById("theme-icon"),a=e.getAttribute("data-theme");try{a==="dark"?(e.removeAttribute("data-theme"),localStorage.setItem("theme","light"),t.textContent="🌙"):(e.setAttribute("data-theme","dark"),localStorage.setItem("theme","dark"),t.textContent="☀️")}catch(e){console.warn("Theme toggle failed:",e)}}(()=>{try{const e=localStorage.getItem("theme");e==="dark"&&(document.documentElement.setAttribute("data-theme","dark"),document.getElementById("theme-icon").textContent="☀️")}catch(e){console.warn("Could not load theme:",e)}})();
+</script>
+<noscript><p style="text-align:center;padding:1rem;background:var(--bg-secondary)">Please enable JavaScript for the best experience.</p></noscript>
 </body>
 </html>
