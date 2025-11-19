@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -193,6 +195,14 @@
             color: var(--text-primary);
         }
 
+        .article-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
         .article-card p {
             color: var(--text-secondary);
             margin-bottom: 1rem;
@@ -295,6 +305,11 @@
                 {% for post in site.posts limit:6 %}
                 <a href="{{ post.url | relative_url }}" class="article-card">
                     <h3>{{ post.title }}</h3>
+                    {% if post.cover-img %}
+                    <img src="{{ post.cover-img }}" alt="{{ post.title }}" class="article-image">
+                    {% elsif post.thumbnail-img %}
+                    <img src="{{ post.thumbnail-img }}" alt="{{ post.title }}" class="article-image">
+                    {% endif %}
                     {% if post.subtitle %}
                     <p>{{ post.subtitle }}</p>
                     {% else %}
