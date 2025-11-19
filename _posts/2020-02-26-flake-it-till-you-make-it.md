@@ -1,18 +1,66 @@
 ---
 layout: post
-title: Flake it till you make it
-subtitle: Excerpt from Soulshaping by Jeff Brown
+title: How OpenAI's GPT-5 Made SEO Irreplaceable
+subtitle: GPT-5’s shift to a retrieval-first model now means that AI depends on real-time sources like search engines for information, rather than relying only on a built-in database.
 cover-img: /assets/img/path.jpg
 thumbnail-img: /assets/img/thumb.png
 share-img: /assets/img/path.jpg
 tags: [books, test]
-author: Sharon Smith and Barry Simpson
+author: Titus
 ---
 
-Under what circumstances should we step off a path? When is it essential that we finish what we start? If I bought a bag of peanuts and had an allergic reaction, no one would fault me if I threw it out. If I ended a relationship with a woman who hit me, no one would say that I had a commitment problem. But if I walk away from a seemingly secure route because my soul has other ideas, I am a flake?
+Key Takeaway:
 
-The truth is that no one else can definitively know the path we are here to walk. It’s tempting to listen—many of us long for the omnipotent other—but unless they are genuine psychic intuitives, they can’t know. All others can know is their own truth, and if they’ve actually done the work to excavate it, they will have the good sense to know that they cannot genuinely know anyone else’s. Only soul knows the path it is here to walk. Since you are the only one living in your temple, only you can know its scriptures and interpretive structure.
+GPT-5’s shift to a retrieval-first model now means that AI depends on real-time sources like search engines for information, rather than relying only on a built-in database. If your content isn’t well-structured and optimized for SEO, it risks being invisible to AI search tools. To stay relevant, focus on creating accurate, trustworthy content that’s easy for both search engines and AI to find and cite— SEO is no longer just helpful, it’s essential.
 
-At the heart of the struggle are two very different ideas of success—survival-driven and soul-driven. For survivalists, success is security, pragmatism, power over others. Success is the absence of material suffering, the nourishing of the soul be damned. It is an odd and ironic thing that most of the material power in our world often resides in the hands of younger souls. Still working in the egoic and material realms, they love the sensations of power and focus most of their energy on accumulation. Older souls tend not to be as materially driven. They have already played the worldly game in previous lives and they search for more subtle shades of meaning in this one—authentication rather than accumulation. They are often ignored by the culture at large, although they really are the truest warriors.
 
-A soulful notion of success rests on the actualization of our innate image. Success is simply the completion of a soul step, however unsightly it may be. We have finished what we started when the lesson is learned. What a fear-based culture calls a wonderful opportunity may be fruitless and misguided for the soul. Staying in a passionless relationship may satisfy our need for comfort, but it may stifle the soul. Becoming a famous lawyer is only worthwhile if the soul demands it. It is an essential failure if you are called to be a monastic this time around. If you need to explore and abandon ten careers in order to stretch your soul toward its innate image, then so be it. Flake it till you make it.
+
+OpenAI’s newest model is trained for intelligence, not to be knowledgeable. 
+
+Yeap. You read that right! 
+
+GPT-5 isn’t designed to know everything—and in fact, it knows far less than many smaller models. 
+
+Instead, it’s built to reason, adapt, and use its tools with precision. 
+
+Its weights don’t store all the world’s information; they’re optimized to interpret and work with information in real time. 
+
+That’s not a limitation—it’s a deliberate and clever shift in design by OpenAI. 
+
+If you are still thinking what's this got to do with SEO?
+
+GPT-5 handles complex problem-solving tasks better. That means it prioritizes technically sound, solution-oriented content that’s actually useful to users. 
+
+Let me spell it out for you, OpenAI, the leader in AI assistant space, made an executive decision to focus on raw intelligence and leave the rest to search engines.
+
+OpenAI, the leading force in the AI assistant field, made a strategic decision to prioritize pure intelligence and leaving other functions to search engines.
+
+I think we have to plan for this, and this is why search is really important. I still believe that, no question, the right product is LLMs connected to ground truth, and that’s why we brought search to ChatGPT and I think that makes a huge difference. 
+
+The Verge
+
+Without grounding which connects this model output to verifiable sources of information, the model is virtually useless. It’s core design is to be the brain on top of tools and information provided.
+
+This means now more than ever SEO is more relevant and critical.
+
+
+
+Here are takes from the SEO community:
+
+ChatGPT is the pilot, but search is the runway. Without SEO, it has nowhere to land.
+
+Tech SEO keeps the runway clear. Content SEO ensures you’re visible when AI comes looking. Far from being obsolete, SEO is becoming the bridge between AI reasoning and the information it delivers.SEO is dead. Long live SEO.
+
+Roxana Stingu
+
+
+
+The new model relies on grounding (web search) and other tools to be accurate – it’s not inherently trained on all the world’s information because… we already have search for that.
+
+Lily Ray
+
+
+
+The grounding approach makes way more sense than training everything from scratch. Google’s been moving towards real-time data integration for years anyway. GPT-5 using web search as a foundation actually validates what we’ve been saying about quality content and proper SEO fundamentals. If anything, this reinforces that being well-referenced and citeable is gonna be even more important going forward.
+
+Elliott Bobiet
