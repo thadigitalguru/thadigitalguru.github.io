@@ -1,5 +1,5 @@
 # Site settings
-title: ## TDG Digital Marketing & SEO Blog
+title: Titus Kores
 description: SEO Specialist & Digital Marketing Expert helping businesses grow their online presence through data-driven strategies.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://thadigitalguru.github.io" # the base hostname & protocol for your site
@@ -76,8 +76,7 @@ social:
   instagram: thadigitalguru
   youtube: thadigitalguru
   medium: thadigitalguru
-  linkedin: titus-kores-610201200
-  Github: thadigitalguru
+  github: thadigitalguru
 
 # Site analytics (optional)
 analytics:
@@ -101,10 +100,4 @@ feed_show_tags: true
 excerpt_length: 50
 
 # Date format
-date_format: "%B %-d, %Y"
-
-# Your name to show in the footer
-author: Titus Kores
-
-# Name of website
-title: Titus Kores 
+date_format: "%B %-d, %Y" 

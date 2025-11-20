@@ -1,0 +1,51 @@
+/* Consolidated CSS for all pages */
+/* Shared across: index.html, blog.html, contact.html, services.html */
+
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --text-primary: #f5f5f5;
+  --text-secondary: #b0b0b0;
+  --border-color: #444;
+  --accent-color: #4A9EFF;
+  --accent-hover: #7BB8FF;
+  --shadow: rgba(255,255,255,0.1);
+}
+
+[data-theme=light] {
+  --bg-primary: #f5f5f5;
+  --bg-secondary: #fff;
+  --text-primary: #000;
+  --text-secondary: #555;
+  --border-color: #ddd;
+  --accent-color: #4A9EFF;
+  --accent-hover: #7BB8FF;
+  --shadow: rgba(0,0,0,0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', Courier, Monaco, Menlo, Consolas, monospace;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--accent-color);
+}
+
+a {
+  color: var(--accent-color);
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
