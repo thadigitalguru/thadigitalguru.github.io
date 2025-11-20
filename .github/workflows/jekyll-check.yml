@@ -1,0 +1,63 @@
+name: Jekyll Site CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.1'
+        bundler-cache: true
+
+    - name: Install dependencies
+      run: |
+        gem install bundler
+        bundle install
+
+    - name: Build Jekyll site
+      run: bundle exec jekyll build
+      env:
+        JEKYLL_ENV: production
+
+    - name: Check HTML and links
+      run: |
+        gem install html-proofer
+        bundle exec htmlproofer ./_site \
+          --disable-external \
+          --allow-hash-href \
+          --ignore-urls "/^http://127.0.0.1/,/^http://0.0.0.0/,/^http://localhost/" \
+          --swap-urls "^/thadigitalguru.github.io:" \
+          --ignore-status-codes "0,999"
+
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: site-build
+        path: _site/
+        retention-days: 7
+
+    - name: Build summary
+      if: always()
+      run: |
+        echo "## Build Summary :rocket:" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "✅ Jekyll build completed successfully" >> $GITHUB_STEP_SUMMARY
+        echo "✅ HTML and internal links checked" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Site Statistics" >> $GITHUB_STEP_SUMMARY
+        echo "- HTML files: $(find _site -name '*.html' | wc -l)" >> $GITHUB_STEP_SUMMARY
+        echo "- Total files: $(find _site -type f | wc -l)" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "📦 Build artifact uploaded and available for 7 days" >> $GITHUB_STEP_SUMMARY

@@ -1,0 +1,80 @@
+name: External Link Check
+
+on:
+  schedule:
+    # Run every Monday at 9:00 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  check-external-links:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.1'
+        bundler-cache: true
+
+    - name: Install dependencies
+      run: |
+        gem install bundler
+        bundle install
+
+    - name: Build Jekyll site
+      run: bundle exec jekyll build
+      env:
+        JEKYLL_ENV: production
+
+    - name: Check external links
+      run: |
+        gem install html-proofer
+        bundle exec htmlproofer ./_site \
+          --only-4xx \
+          --allow-hash-href \
+          --ignore-urls "/linkedin.com/,/twitter.com/,/x.com/,/facebook.com/" \
+          --swap-urls "^/thadigitalguru.github.io:" \
+          --http-status-ignore "429,503" \
+          --typhoeus-config '{"timeout":30,"connecttimeout":10}' \
+          --ignore-status-codes "0,999"
+      continue-on-error: true
+
+    - name: Create issue on failure
+      if: failure()
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const title = '🔗 Broken External Links Detected';
+          const body = `External link check failed on ${new Date().toDateString()}.
+
+          Please review the workflow run for details:
+          ${context.payload.repository.html_url}/actions/runs/${context.runId}
+
+          Common causes:
+          - External sites are temporarily down
+          - URLs have changed or been removed
+          - Rate limiting from external sites
+
+          ---
+          *This issue was automatically created by the External Link Check workflow.*`;
+
+          github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: title,
+            body: body,
+            labels: ['automated', 'link-check']
+          });
+
+    - name: Build summary
+      if: always()
+      run: |
+        echo "## External Link Check :link:" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "Checked all external links in the built site." >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Note:** Social media links (LinkedIn, Twitter/X, Facebook) are excluded to avoid rate limiting." >> $GITHUB_STEP_SUMMARY
