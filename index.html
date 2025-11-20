@@ -63,8 +63,8 @@
 <header role="banner">
 <div class="logo">{{site.title}}</div>
 <div class="header-right">
-<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-<span id="theme-icon" aria-hidden="true">🌙</span>
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light mode">
+<span id="theme-icon" aria-hidden="true">☀️</span>
 </button>
 <nav class="social-links" aria-label="Social media links">
 <a href="https://x.com/thadigitalguru" target="_blank" rel="noopener noreferrer" aria-label="Follow on X (Twitter)">X</a>
@@ -145,7 +145,7 @@
 </footer>
 
 <script>
-function toggleTheme(){const e=document.documentElement,t=document.getElementById("theme-icon"),a=e.getAttribute("data-theme");try{a==="dark"?(e.removeAttribute("data-theme"),localStorage.setItem("theme","light"),t.textContent="🌙"):(e.setAttribute("data-theme","dark"),localStorage.setItem("theme","dark"),t.textContent="☀️")}catch(e){console.warn("Theme toggle failed:",e)}}function toggleMenu(){document.getElementById("nav-menu").classList.toggle("active")}document.addEventListener("click",e=>{const t=document.getElementById("nav-menu");t.classList.contains("active")&&!e.target.closest(".menu-toggle")&&!e.target.closest(".nav-menu")&&t.classList.remove("active")});(()=>{try{const e=localStorage.getItem("theme");e==="dark"&&(document.documentElement.setAttribute("data-theme","dark"),document.getElementById("theme-icon").textContent="☀️")}catch(e){console.warn("Could not load theme:",e)}})();
+function toggleTheme(){const e=document.documentElement,t=document.getElementById("theme-icon"),a=e.getAttribute("data-theme");try{a==="light"?(e.removeAttribute("data-theme"),localStorage.setItem("theme","dark"),t.textContent="☀️"):(e.setAttribute("data-theme","light"),localStorage.setItem("theme","light"),t.textContent="🌙")}catch(e){console.warn("Theme toggle failed:",e)}}function toggleMenu(){document.getElementById("nav-menu").classList.toggle("active")}document.addEventListener("click",e=>{const t=document.getElementById("nav-menu");t.classList.contains("active")&&!e.target.closest(".menu-toggle")&&!e.target.closest(".nav-menu")&&t.classList.remove("active")});(()=>{try{const e=localStorage.getItem("theme");e==="light"?(document.documentElement.setAttribute("data-theme","light"),document.getElementById("theme-icon").textContent="🌙"):(document.documentElement.removeAttribute("data-theme"),document.getElementById("theme-icon").textContent="☀️")}catch(e){console.warn("Could not load theme:",e)}})();
 </script>
 <noscript><p style="text-align:center;padding:1rem;background:var(--bg-secondary)">Please enable JavaScript for the best experience.</p></noscript>
 </body>
