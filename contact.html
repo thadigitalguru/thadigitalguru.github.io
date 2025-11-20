@@ -43,18 +43,41 @@ subtitle: Get in touch
 </div>
 
 <style>
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --text-primary: #f5f5f5;
+  --text-secondary: #b0b0b0;
+  --border-color: #444;
+  --accent-color: #4A9EFF;
+  --accent-hover: #7BB8FF;
+  --shadow: rgba(255,255,255,0.1);
+}
+
+[data-theme=light] {
+  --bg-primary: #f5f5f5;
+  --bg-secondary: #fff;
+  --text-primary: #000;
+  --text-secondary: #555;
+  --border-color: #ddd;
+  --accent-color: #4A9EFF;
+  --accent-hover: #7BB8FF;
+  --shadow: rgba(0,0,0,0.1);
+}
+
 body {
   font-family: 'Courier New', Courier, Monaco, Menlo, Consolas, monospace;
-  background: #000000;
-  color: #f5f5f5;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.3s, color 0.3s;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #4A9EFF;
+  color: var(--accent-color);
 }
 
 a {
-  color: #4A9EFF;
+  color: var(--accent-color);
 }
 
 .contact-container {
@@ -71,12 +94,12 @@ a {
 .contact-intro h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #4A9EFF;
+  color: var(--accent-color);
 }
 
 .contact-intro p {
   font-size: 1.2rem;
-  color: #b0b0b0;
+  color: var(--text-secondary);
 }
 
 .contact-methods {
@@ -87,21 +110,22 @@ a {
 }
 
 .contact-card {
-  background: #0a0a0a;
+  background: var(--bg-secondary);
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(255,255,255,0.1);
-  border: 1px solid #444;
+  box-shadow: 0 2px 8px var(--shadow);
+  border: 1px solid var(--border-color);
+  transition: background 0.3s;
 }
 
 .contact-card h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #4A9EFF;
+  color: var(--accent-color);
 }
 
 .contact-card a {
-  color: #4A9EFF;
+  color: var(--accent-color);
   text-decoration: none;
 }
 
@@ -116,8 +140,8 @@ a {
 
 .contact-card li {
   padding: 0.5rem 0;
-  border-bottom: 1px solid #444;
-  color: #f5f5f5;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
 }
 
 .contact-card li:last-child {
@@ -127,21 +151,22 @@ a {
 .contact-cta {
   text-align: center;
   padding: 3rem 0;
-  background: #0a0a0a;
+  background: var(--bg-secondary);
   border-radius: 8px;
-  border: 1px solid #444;
+  border: 1px solid var(--border-color);
+  transition: background 0.3s;
 }
 
 .contact-cta h3 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  color: #4A9EFF;
+  color: var(--accent-color);
 }
 
 .contact-button {
   display: inline-block;
-  background: #4A9EFF;
-  color: #000000;
+  background: var(--accent-color);
+  color: var(--bg-primary);
   padding: 1rem 2rem;
   border-radius: 8px;
   text-decoration: none;
@@ -150,6 +175,6 @@ a {
 }
 
 .contact-button:hover {
-  background: #7BB8FF;
+  background: var(--accent-hover);
 }
 </style>
