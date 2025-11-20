@@ -10,7 +10,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
-  - jekyll-archives
 
 # Exclude from processing
 exclude:
