@@ -1,0 +1,56 @@
+name: Build Jekyll with Tailwind CSS
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.1'
+        bundler-cache: true
+
+    - name: Install Node dependencies
+      run: npm install
+
+    - name: Build Tailwind CSS
+      run: npm run build:css
+
+    - name: Build Jekyll site
+      run: bundle exec jekyll build
+      env:
+        JEKYLL_ENV: production
+
+    - name: Upload site artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: site-with-tailwind
+        path: _site/
+        retention-days: 7
+
+    - name: Build summary
+      run: |
+        echo "## Build Complete ✅" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "Jekyll site built successfully with Tailwind CSS" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        if [ -f "assets/css/output.css" ]; then
+          FILESIZE=$(du -h assets/css/output.css | cut -f1)
+          echo "**Tailwind CSS output:** $FILESIZE" >> $GITHUB_STEP_SUMMARY
+        fi

@@ -57,3 +57,9 @@ yarn-error.log*
 out/
 build/
 dist/
+
+# Node modules
+node_modules/
+
+# Tailwind CSS output (generated during build)
+assets/css/output.css
