@@ -5,7 +5,7 @@ subtitle: Unlock deeper insights from Google Search Console using regular expres
 cover-img: /assets/img/gsc-regex.jpg
 thumbnail-img: /assets/img/gsc-regex.jpg
 share-img: /assets/img/gsc-regex.jpg
-tags: [SEO, Google Search Console, Technical SEO, Data Analysis, RegEx]
+tags: [SEO, Google Search Console, Technical SEO]
 author: Titus Kores
 date: 2024-10-08
 ---
@@ -56,7 +56,7 @@ Combine regex with native GSC filters for targeted analysis, enabling sophistica
 
 ## Advanced Insights: The AI Overviews Impact
 
-Parenthetical queries—such as semantic entity additions—have increased notably since AI Overviews launched, revealing how Google clusters and processes topics.
+Parenthetical queries—such as semantic entity additions—have increased notably since AI Overviews launched, revealing how Google clusters and processes topics. As [AI continues to reshape search](/blog/2025/11/19/how-openai-gpt5-made-seo-irreplaceable/), understanding these patterns becomes crucial.
 
 This shift shows that Google is becoming more sophisticated in understanding:
 - Entity relationships
@@ -78,7 +78,7 @@ Beyond rankings and CTR monitoring, GSC with regex becomes **"a semantic analysi
 - Clusters topics
 - Processes search queries
 
-By mastering regex in GSC, you're not just tracking performance—you're gaining insight into Google's understanding of your content and how users truly search for information in your niche.
+By mastering regex in GSC, you're not just tracking performance—you're gaining insight into Google's understanding of your content and how users truly search for information in your niche. This understanding is particularly valuable as you work to [get cited in AI-powered search results](/blog/2025/11/19/guide-to-getting-cited-in-ai-answers/).
 
 Start experimenting with these patterns today and discover hidden opportunities in your search data that your competitors are missing.
 
