@@ -6,7 +6,6 @@ url: "https://thadigitalguru.github.io" # the base hostname & protocol for your 
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-minimal
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
