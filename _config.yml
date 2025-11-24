@@ -100,3 +100,7 @@ excerpt_length: 50
 
 # Date format
 date_format: "%B %-d, %Y" 
+
+# Site JavaScript
+site-js:
+  - "/assets/js/theme.js"
