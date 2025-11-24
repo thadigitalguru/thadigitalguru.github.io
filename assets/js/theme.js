@@ -3,23 +3,37 @@ function toggleTheme() {
     t = document.getElementById("theme-icon"),
     a = e.getAttribute("data-theme");
   try {
-    a === "light" ? (e.removeAttribute("data-theme"), localStorage.setItem("theme", "dark"), t.textContent = "☀️") : (e.setAttribute("data-theme", "light"), localStorage.setItem("theme", "light"), t.textContent = "🌙")
+    a === "light" ? (e.removeAttribute("data-theme"), localStorage.setItem("theme", "dark"), t && (t.textContent = "☀️")) : (e.setAttribute("data-theme", "light"), localStorage.setItem("theme", "light"), t && (t.textContent = "🌙"))
   } catch (e) {
     console.warn("Theme toggle failed:", e)
   }
 }
 
 function toggleMenu() {
-  document.getElementById("nav-menu").classList.toggle("active")
+  const menu = document.getElementById("nav-menu");
+  if (menu) {
+    menu.classList.toggle("active");
+  }
 }
+
 document.addEventListener("click", e => {
   const t = document.getElementById("nav-menu");
-  t.classList.contains("active") && !e.target.closest(".menu-toggle") && !e.target.closest(".nav-menu") && t.classList.remove("active")
+  if (t) {
+    t.classList.contains("active") && !e.target.closest(".menu-toggle") && !e.target.closest(".nav-menu") && t.classList.remove("active")
+  }
 });
+
 (() => {
   try {
     const e = localStorage.getItem("theme");
-    e === "light" ? (document.documentElement.setAttribute("data-theme", "light"), document.getElementById("theme-icon").textContent = "🌙") : (document.documentElement.removeAttribute("data-theme"), document.getElementById("theme-icon").textContent = "☀️")
+    const t = document.getElementById("theme-icon");
+    if (e === "light") {
+      document.documentElement.setAttribute("data-theme", "light");
+      if (t) t.textContent = "🌙";
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+      if (t) t.textContent = "☀️";
+    }
   } catch (e) {
     console.warn("Could not load theme:", e)
   }
