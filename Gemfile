@@ -4,6 +4,7 @@ source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3.2"
 gem "webrick" # Required for Ruby 3.0+
+gem "jekyll-sass-converter", "~> 2.2"  # Use older version that works with Ruby 2.6
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
