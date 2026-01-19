@@ -1,6 +1,4 @@
-/* Consolidated CSS for all pages */
-/* Shared across: index.html, blog.html, contact.html, services.html */
-
+/* Global variables and defaults */
 :root {
   --bg-primary: #000000;
   --bg-secondary: #0a0a0a;
@@ -9,7 +7,7 @@
   --border-color: #444;
   --accent-color: #4A9EFF;
   --accent-hover: #7BB8FF;
-  --shadow: rgba(255,255,255,0.1);
+  --shadow: rgba(255, 255, 255, 0.1);
 }
 
 [data-theme=light] {
@@ -20,7 +18,7 @@
   --border-color: #ddd;
   --accent-color: #4A9EFF;
   --accent-hover: #7BB8FF;
-  --shadow: rgba(0,0,0,0.1);
+  --shadow: rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -37,20 +35,26 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--accent-color);
 }
 
 a {
   color: var(--accent-color);
   transition: color 0.3s;
+  text-decoration: none;
 }
 
 a:hover {
   color: var(--accent-hover);
 }
 
-/* Theme Toggle & Menu Styles */
+/* Common Components */
 .theme-toggle,
 .menu-toggle {
   padding: .5rem 1rem;
@@ -67,4 +71,122 @@ a:hover {
 .menu-toggle:hover {
   background: var(--border-color);
   color: var(--bg-primary);
+}
+
+.cta-button,
+.contact-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 600;
+  transition: all .3s;
+  background: transparent;
+}
+
+.cta-button:hover,
+.contact-button:hover {
+  background: var(--border-color);
+  color: var(--bg-primary);
+}
+
+/* Layout Elements */
+header {
+  padding: 1rem 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  border: 3px solid var(--accent-color);
+  padding: .4rem 1.2rem;
+  background: var(--bg-secondary);
+}
+
+/* Home/Hero Styles */
+.hero {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  box-shadow: 0 2px 8px var(--shadow);
+  margin-bottom: 4rem;
+}
+
+/* Services Page Styles */
+.services-page {
+  padding: 4rem 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.service-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 3.5rem 2.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-color);
+}
+
+/* Blog Styles */
+.posts-list {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.post-preview {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Contact Styles */
+.contact-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.contact-card {
+  background: var(--bg-secondary);
+  padding: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 2rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
 }

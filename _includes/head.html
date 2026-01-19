@@ -75,6 +75,8 @@
   {% endfor %}
   {% endif %}
 
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
   {% if site.site-css %}
   {% for css in site.site-css %}
   <link rel="stylesheet" href="{{ css | relative_url }}">
