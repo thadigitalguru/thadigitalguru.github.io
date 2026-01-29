@@ -172,22 +172,36 @@
             top: 100%;
             right: 4rem;
             background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
             border-radius: 8px;
             box-shadow: 0 4px 12px var(--shadow);
             padding: 1rem;
-            min-width: 150px;
-            z-index: 99
+            min-width: 180px;
+            z-index: 99;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease
         }
 
         .nav-menu.active {
             display: flex;
             flex-direction: column;
-            gap: .5rem
+            gap: .5rem;
+            opacity: 1;
+            transform: translateY(0)
         }
 
         .nav-menu a {
-            border: none;
-            text-align: center
+            border: 2px solid transparent;
+            text-align: center;
+            padding: .75rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease
+        }
+
+        .nav-menu a:hover {
+            border-color: var(--accent-color);
+            background: var(--bg-primary)
         }
 
         main {
@@ -213,7 +227,80 @@
             font-size: 2.5rem;
             margin-bottom: 2rem;
             font-weight: 700;
-            color: var(--accent-color)
+            color: var(--accent-color);
+            min-height: 6rem
+        }
+
+        .hero-content h1 .typing-text {
+            border-right: 3px solid var(--accent-color);
+            animation: blink 1s infinite
+        }
+
+        @keyframes blink {
+
+            0%,
+            50% {
+                border-color: var(--accent-color)
+            }
+
+            51%,
+            100% {
+                border-color: transparent
+            }
+        }
+
+        .social-proof {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color)
+        }
+
+        .social-proof-item {
+            text-align: center
+        }
+
+        .social-proof-item .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            display: block
+        }
+
+        .social-proof-item .label {
+            font-size: 0.9rem;
+            color: var(--text-secondary)
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            z-index: 1
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--accent-color);
+            transition: left 0.3s ease;
+            z-index: -1
+        }
+
+        .cta-button:hover::before {
+            left: 0
+        }
+
+        .cta-button:hover {
+            color: var(--bg-primary);
+            border-color: var(--accent-color)
         }
 
         .hero-content p {
@@ -249,11 +336,7 @@
             box-shadow: 0 4px 12px var(--shadow)
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            font-weight: 600
-        }
+
 
         .articles-section {
             margin-top: 4rem
@@ -276,8 +359,43 @@
             border-radius: 12px;
             padding: 2rem;
             box-shadow: 0 2px 8px var(--shadow);
-            transition: transform .3s, box-shadow .3s;
-            display: block
+            transition: transform .3s, box-shadow .3s, border-color .3s;
+            display: block;
+            border: 2px solid transparent;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        .article-card:nth-child(1) {
+            animation-delay: 0.1s
+        }
+
+        .article-card:nth-child(2) {
+            animation-delay: 0.2s
+        }
+
+        .article-card:nth-child(3) {
+            animation-delay: 0.3s
+        }
+
+        .article-card:nth-child(4) {
+            animation-delay: 0.4s
+        }
+
+        .article-card:nth-child(5) {
+            animation-delay: 0.5s
+        }
+
+        .article-card:nth-child(6) {
+            animation-delay: 0.6s
         }
 
         .article-card a {
@@ -287,8 +405,9 @@
         }
 
         .article-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 16px var(--shadow)
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px var(--shadow);
+            border-color: var(--accent-color)
         }
 
         .article-card h3 {
@@ -453,12 +572,26 @@
     <main id="main" role="main">
         <section class="hero" aria-labelledby="intro-heading">
             <div class="hero-content">
-                <h1 id="intro-heading">Hi, I'm Titus</h1>
+                <h1 id="intro-heading">Hi, I'm <span class="typing-text" id="typing-text">Titus</span></h1>
                 <p>I'm a <strong>Technical SEO</strong>, <strong>Growth Marketer</strong>, <strong>Content
                         Writer</strong>, <strong>Python</strong> and <strong>Personal Development</strong> enthusiast.
                 </p>
                 <p>I help businesses grow their online presence through data-driven SEO strategies, compelling content,
                     and technical optimization.</p>
+                <div class="social-proof">
+                    <div class="social-proof-item">
+                        <span class="number">50+</span>
+                        <span class="label">Clients Helped</span>
+                    </div>
+                    <div class="social-proof-item">
+                        <span class="number">200%</span>
+                        <span class="label">Avg. Traffic Growth</span>
+                    </div>
+                    <div class="social-proof-item">
+                        <span class="number">5+</span>
+                        <span class="label">Years Experience</span>
+                    </div>
+                </div>
             </div>
             <div class="hero-image">
                 <img src="/assets/img/profile-pic.jpg" alt="Titus Kores - Technical SEO Specialist" width="400"
@@ -541,15 +674,63 @@
 
         function toggleMenu() {
             const menu = document.getElementById("nav-menu");
+            const menuToggle = document.querySelector(".menu-toggle");
             if (menu) {
                 menu.classList.toggle("active");
+                const isActive = menu.classList.contains("active");
+                menuToggle.setAttribute("aria-expanded", isActive);
             }
         }
 
         document.addEventListener("click", e => {
-            const t = document.getElementById("nav-menu");
-            if (t) {
-                t.classList.contains("active") && !e.target.closest(".menu-toggle") && !e.target.closest(".nav-menu") && t.classList.remove("active")
+            const menu = document.getElementById("nav-menu");
+            const menuToggle = document.querySelector(".menu-toggle");
+            if (menu && menu.classList.contains("active")) {
+                if (!e.target.closest(".menu-toggle") && !e.target.closest(".nav-menu")) {
+                    menu.classList.remove("active");
+                    menuToggle.setAttribute("aria-expanded", "false");
+                }
+            }
+        });
+
+        // Typing animation for hero section
+        const roles = ["Titus", "a Technical SEO", "a Growth Marketer", "a Content Writer"];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById("typing-text");
+
+        function typeText() {
+            if (!typingElement) return;
+
+            const currentRole = roles[roleIndex];
+
+            if (isDeleting) {
+                typingElement.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentRole.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeText, typeSpeed);
+        }
+
+        // Start typing animation when page loads
+        document.addEventListener("DOMContentLoaded", () => {
+            if (document.getElementById("typing-text")) {
+                setTimeout(typeText, 1000);
             }
         });
 
