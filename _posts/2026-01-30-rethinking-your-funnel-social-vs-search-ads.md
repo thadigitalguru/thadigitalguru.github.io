@@ -7,10 +7,9 @@ tags: [social ads, search ads, marketing funnel, ppc strategy, facebook ads, goo
 author: "Titus Kores"
 excerpt: "Terms like 'top of funnel,' 'middle of funnel,' and 'bottom of funnel' are often used as if they carry the same meaning across all marketing channels—but they don't. Learn why traditional funnel models fall short on social channels and what strategic approaches deliver better outcomes."
 image: /assets/img/Article1.png
+cover-img: /assets/img/Article1.png
 permalink: /blog/2026/01/30/social-ads-vs-search-ads/
 ---
-
-![Social Ads vs Search Ads](/assets/img/Article1.png)
 
 Terms like "top of funnel," "middle of funnel," and "bottom of funnel" are often used as if they carry the same meaning across all marketing channels—but they don't.
 
@@ -87,7 +86,9 @@ Treating everyone the same leads to inefficiency—you'll over-nurture those rea
 
 ## What Actually Happens When Someone Sees Your Social Ad
 
-![Marketing Funnel Stages](/assets/img/Article2.png)
+<div style="text-align: center; margin: 2rem 0;">
+  <img src="/assets/img/Article2.png" alt="Marketing Funnel Stages" style="max-width: 100%; height: auto; border-radius: 8px;">
+</div>
 
 ### High Intent (1–2%)
 These users already feel the pain, are seeking a solution, and encounter your ad at the right moment. They convert quickly, with little extra effort.
