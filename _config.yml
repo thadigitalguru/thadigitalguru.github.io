@@ -25,6 +25,9 @@ collections:
     output: true
     permalink: /blog/:year/:month/:day/:title/
 
+# Force rebuild timestamp
+timestamp: 2026-01-30-08-35
+
 # Defaults
 defaults:
   - scope:
@@ -43,7 +46,6 @@ defaults:
 author:
   name: Titus Kores
   email: tituskores@gmail.com
-  
 
 # Site navigation
 navigation:
@@ -99,7 +101,7 @@ feed_show_tags: true
 excerpt_length: 50
 
 # Date format
-date_format: "%B %-d, %Y" 
+date_format: "%B %-d, %Y"
 
 # Site JavaScript
 site-js:
