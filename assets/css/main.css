@@ -27,11 +27,13 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   font-family: 'Courier New', Courier, Monaco, Menlo, Consolas, monospace;
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
+  margin: 0;
   transition: background 0.3s, color 0.3s;
 }
 
