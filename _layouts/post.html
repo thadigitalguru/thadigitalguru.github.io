@@ -165,9 +165,11 @@ layout: base
 
 .article-summary-tools__buttons {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 1.25rem;
+  flex-wrap: nowrap;
+  gap: 1rem;
   justify-content: flex-end;
+  align-items: center;
+  min-width: 0;
 }
 
 .article-summary-tools__button,
@@ -201,6 +203,19 @@ layout: base
 
 .article-summary-tools__button[data-tool-name="ChatGPT"] {
   border-color: #f0f0f0;
+  --tool-width: 13.7rem;
+}
+
+.article-summary-tools__button[data-tool-name="Perplexity"] {
+  --tool-width: 14.8rem;
+}
+
+.article-summary-tools__button[data-tool-name="Claude"] {
+  --tool-width: 12.3rem;
+}
+
+.article-summary-tools__button[data-tool-name="Grok"] {
+  --tool-width: 10.5rem;
 }
 
 .article-summary-tools__icon {
@@ -234,10 +249,15 @@ layout: base
 }
 
 .article-summary-tools__text {
-  font-size: 1.3rem;
+  font-size: 1.55rem;
   line-height: 1;
   color: inherit;
   opacity: 0.78;
+}
+
+.article-summary-tools__button[data-tool-name="Grok"] .article-summary-tools__icon svg {
+  transform: scale(0.94);
+  transform-origin: center;
 }
 
 .post-subtitle {
