@@ -144,20 +144,21 @@ layout: base
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
   margin-bottom: 1.5rem;
   padding: 1rem 1.25rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid #2d2d2d;
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.02);
+  background: #151515;
 }
 
 .article-summary-tools__label {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--text-primary);
+  color: #f3f3f3;
   white-space: nowrap;
 }
 
@@ -165,17 +166,19 @@ layout: base
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  justify-content: flex-end;
 }
 
 .article-summary-tools__button,
 .article-summary-tools__copy {
-  border: 1px solid var(--border-color);
+  border: 1px solid #343434;
   border-radius: 0.9rem;
-  background: rgba(255, 255, 255, 0.02);
-  color: var(--text-primary);
-  padding: 0.85rem 1.1rem;
+  background: #191919;
+  color: #e7e7e7;
+  padding: 0.85rem 1.25rem;
   font: inherit;
   font-weight: 600;
+  letter-spacing: 0.02em;
   cursor: pointer;
   transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
@@ -183,7 +186,7 @@ layout: base
 .article-summary-tools__button:hover,
 .article-summary-tools__copy:hover {
   border-color: var(--accent-color);
-  background: rgba(74, 158, 255, 0.12);
+  background: #222b36;
   transform: translateY(-1px);
 }
 
@@ -191,12 +194,12 @@ layout: base
   width: 100%;
   margin-top: 0.25rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid #2d2d2d;
 }
 
 .article-summary-tools__status {
   margin-bottom: 0.75rem;
-  color: var(--text-secondary);
+  color: #b7b7b7;
   font-size: 0.95rem;
 }
 
@@ -206,17 +209,17 @@ layout: base
   font-size: 0.85rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--text-secondary);
+  color: #b7b7b7;
 }
 
 .article-summary-tools__prompt {
   width: 100%;
   min-height: 110px;
   resize: vertical;
-  border: 1px solid var(--border-color);
+  border: 1px solid #343434;
   border-radius: 0.9rem;
-  background: var(--bg-primary);
-  color: var(--text-primary);
+  background: #0f0f0f;
+  color: #f0f0f0;
   padding: 1rem;
   font-family: inherit;
   font-size: 0.95rem;
@@ -382,6 +385,7 @@ layout: base
 
   .article-summary-tools__label {
     white-space: normal;
+    margin-bottom: 0.25rem;
   }
   
   .post-meta {
