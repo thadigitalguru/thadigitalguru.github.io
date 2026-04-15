@@ -163,7 +163,11 @@
   {% endif %}
 
   {% assign favicon_svg_exists = site.static_files | where: "path", "/favicon.svg" | size %}
-  {% if favicon_svg_exists == 1 %}
+  {% assign favicon_tdg_exists = site.static_files | where: "path", "/favicon-tdg.svg" | size %}
+  {% if favicon_tdg_exists == 1 %}
+  <link rel="icon" type="image/svg+xml" href="{{ '/favicon-tdg.svg' | relative_url }}" />
+  <link rel="alternate icon" href="{{ '/favicon-tdg.svg' | relative_url }}" />
+  {% elsif favicon_svg_exists == 1 %}
   <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}" />
   {% else %}
   {% assign favicon_png_exists = site.static_files | where: "path", "/assets/img/favicon.png" | size %}
@@ -178,6 +182,7 @@
   {% assign favicon_exists = site.static_files | where: "path", "/favicon.ico" | size %}
   {% if favicon_exists == 1 %}
   <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" />
+  {% endif %}
   {% endif %}
   {% endif %}
   {% endif %}
