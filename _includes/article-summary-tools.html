@@ -1,0 +1,20 @@
+{% if page.layout == "post" %}
+<div class="article-summary-tools" data-summary-tools data-article-url="{{ page.url | absolute_url }}">
+  <div class="article-summary-tools__label">Summarize with AI</div>
+  <div class="article-summary-tools__buttons" role="group" aria-label="Summarize this article with AI">
+    <button type="button" class="article-summary-tools__button" data-summary-tool data-tool-name="ChatGPT" data-tool-url="https://chatgpt.com/">ChatGPT</button>
+    <button type="button" class="article-summary-tools__button" data-summary-tool data-tool-name="Perplexity" data-tool-url="https://www.perplexity.ai/">Perplexity</button>
+    <button type="button" class="article-summary-tools__button" data-summary-tool data-tool-name="Claude" data-tool-url="https://claude.ai/">Claude</button>
+    <button type="button" class="article-summary-tools__button" data-summary-tool data-tool-name="Grok" data-tool-url="https://grok.com/">Grok</button>
+  </div>
+
+  <div class="article-summary-tools__panel" data-summary-panel hidden>
+    <div class="article-summary-tools__status" data-summary-status></div>
+    <label class="article-summary-tools__prompt-label" for="summary-prompt">Prompt</label>
+    <textarea id="summary-prompt" class="article-summary-tools__prompt" data-summary-prompt readonly></textarea>
+    <div class="article-summary-tools__actions">
+      <button type="button" class="article-summary-tools__copy" data-summary-copy>Copy prompt</button>
+    </div>
+  </div>
+</div>
+{% endif %}
