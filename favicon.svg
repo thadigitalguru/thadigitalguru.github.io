@@ -1,7 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Titus Kores favicon">
-  <rect width="512" height="512" rx="96" fill="#000000"/>
-  <rect x="24" y="24" width="464" height="464" rx="80" fill="none" stroke="#4A9EFF" stroke-width="20"/>
-  <text x="256" y="314" text-anchor="middle" fill="#F5F5F5"
-        font-family="Courier New, Courier, monospace" font-size="190" font-weight="700"
-        letter-spacing="-8">TK</text>
+  <rect width="512" height="512" rx="112" fill="#000000"/>
+  <rect x="56" y="56" width="400" height="400" rx="104" fill="#4A9EFF"/>
+  <rect x="76" y="76" width="360" height="360" rx="88" fill="none" stroke="#FFFFFF" stroke-width="18"/>
+  <text x="256" y="314" text-anchor="middle" fill="#FFFFFF"
+        font-family="Courier New, Courier, monospace" font-size="150" font-weight="700"
+        letter-spacing="-6">TDG</text>
 </svg>
