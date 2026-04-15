@@ -2,10 +2,22 @@
 <div class="article-summary-tools" data-summary-tools data-article-url="{{ page.url | absolute_url }}">
   <div class="article-summary-tools__label">Summarize with AI</div>
   <div class="article-summary-tools__buttons" role="group" aria-label="Summarize this article with AI">
-    <button type="button" class="article-summary-tools__button" data-summary-tool data-tool-name="ChatGPT" data-tool-url="https://chatgpt.com/">ChatGPT</button>
-    <button type="button" class="article-summary-tools__button" data-summary-tool data-tool-name="Perplexity" data-tool-url="https://www.perplexity.ai/">Perplexity</button>
-    <button type="button" class="article-summary-tools__button" data-summary-tool data-tool-name="Claude" data-tool-url="https://claude.ai/">Claude</button>
-    <button type="button" class="article-summary-tools__button" data-summary-tool data-tool-name="Grok" data-tool-url="https://grok.com/">Grok</button>
+    <button type="button" class="article-summary-tools__button" style="--tool-accent:#10A37F" data-summary-tool data-tool-name="ChatGPT" data-tool-url="https://chatgpt.com/">
+      <span class="article-summary-tools__icon" aria-hidden="true">✺</span>
+      <span class="article-summary-tools__text">ChatGPT</span>
+    </button>
+    <button type="button" class="article-summary-tools__button" style="--tool-accent:#2F6CFF" data-summary-tool data-tool-name="Perplexity" data-tool-url="https://www.perplexity.ai/">
+      <span class="article-summary-tools__icon" aria-hidden="true">✳</span>
+      <span class="article-summary-tools__text">Perplexity</span>
+    </button>
+    <button type="button" class="article-summary-tools__button" style="--tool-accent:#FF8A4C" data-summary-tool data-tool-name="Claude" data-tool-url="https://claude.ai/">
+      <span class="article-summary-tools__icon" aria-hidden="true">✦</span>
+      <span class="article-summary-tools__text">Claude</span>
+    </button>
+    <button type="button" class="article-summary-tools__button" style="--tool-accent:#A3A3A3" data-summary-tool data-tool-name="Grok" data-tool-url="https://grok.com/">
+      <span class="article-summary-tools__icon" aria-hidden="true">◌</span>
+      <span class="article-summary-tools__text">Grok</span>
+    </button>
   </div>
 </div>
 {% endif %}
