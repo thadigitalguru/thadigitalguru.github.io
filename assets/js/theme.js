@@ -71,44 +71,17 @@ document.addEventListener("click", e => {
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-summary-tools]").forEach(container => {
-    const promptPanel = container.querySelector("[data-summary-panel]");
-    const promptField = container.querySelector("[data-summary-prompt]");
-    const statusField = container.querySelector("[data-summary-status]");
-    const copyButton = container.querySelector("[data-summary-copy]");
     const toolButtons = container.querySelectorAll("[data-summary-tool]");
     const articleUrl = container.getAttribute("data-article-url") || window.location.href;
     const prompt = getSummaryPrompt(articleUrl);
 
-    const showPrompt = (toolName) => {
-      if (promptField) {
-        promptField.value = prompt;
-      }
-
-      if (statusField) {
-        statusField.textContent = `${toolName} selected. The prompt is ready to copy.`;
-      }
-
-      if (promptPanel) {
-        promptPanel.hidden = false;
-      }
-    };
-
     toolButtons.forEach(button => {
       button.addEventListener("click", async () => {
-        const toolName = button.getAttribute("data-tool-name") || button.textContent.trim();
         const toolUrl = button.getAttribute("data-tool-url");
-
-        showPrompt(toolName);
 
         try {
           await copySummaryPrompt(prompt);
-          if (statusField) {
-            statusField.textContent = `${toolName} selected. Prompt copied and ready to paste.`;
-          }
         } catch (error) {
-          if (statusField) {
-            statusField.textContent = `${toolName} selected. Copy the prompt manually from below.`;
-          }
           console.warn("Could not copy summary prompt:", error);
         }
 
@@ -117,21 +90,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     });
-
-    if (copyButton) {
-      copyButton.addEventListener("click", async () => {
-        try {
-          await copySummaryPrompt(prompt);
-          if (statusField) {
-            statusField.textContent = "Prompt copied. Paste it into your chosen AI tool.";
-          }
-        } catch (error) {
-          if (statusField) {
-            statusField.textContent = "Copy failed. Select and copy the prompt manually.";
-          }
-          console.warn("Could not copy summary prompt:", error);
-        }
-      });
-    }
   });
 });
