@@ -147,70 +147,77 @@ layout: base
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 1.5rem;
-  padding: 1rem 1.05rem;
-  border: 1px solid var(--border-color);
-  border-radius: 1rem;
-  background: var(--bg-secondary);
+  padding: 1.7rem 1.65rem 2rem;
+  border: 2px solid var(--border-color);
+  border-radius: 2rem;
+  background: var(--bg-primary);
 }
 
 .article-summary-tools__label {
-  font-size: 0.98rem;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 1.08rem;
   font-weight: 700;
-  letter-spacing: 0.17em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text-primary);
-  opacity: 0.96;
   white-space: nowrap;
 }
 
 .article-summary-tools__buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 1rem 1.25rem;
   justify-content: flex-end;
 }
 
 .article-summary-tools__button,
 .article-summary-tools__copy {
   --tool-accent: #4a9eff;
-  border: 2px solid var(--border-color);
-  border-radius: 1rem;
-  background: var(--bg-primary);
+  width: var(--tool-width, auto);
+  max-width: 100%;
+  border: 2px solid #343434;
+  border-radius: 1.45rem;
+  background: #0c0c0c;
   color: var(--text-primary);
-  padding: 0.9rem 1.15rem 0.9rem 0.95rem;
+  padding: 1rem 1.35rem 1rem 1.15rem;
   font: inherit;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   font-weight: 500;
   letter-spacing: 0.01em;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 1rem;
+  justify-content: flex-start;
   transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
 .article-summary-tools__button:hover,
 .article-summary-tools__copy:hover {
   border-color: var(--text-primary);
-  background: var(--bg-secondary);
-  opacity: 1;
+  background: #111111;
   transform: translateY(-1px);
 }
 
+.article-summary-tools__button[data-tool-name="ChatGPT"] {
+  border-color: #f0f0f0;
+}
+
 .article-summary-tools__icon {
-  width: 1.72rem;
-  height: 1.72rem;
+  width: 1.85rem;
+  height: 1.85rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   color: var(--tool-accent);
   background: transparent;
-  font-size: 1.72rem;
+  font-size: 1.85rem;
   line-height: 1;
   flex: 0 0 auto;
 }
 
 .article-summary-tools__icon i {
-  font-size: 1.72rem;
+  font-size: 1.85rem;
   line-height: 1;
 }
 
@@ -227,10 +234,10 @@ layout: base
 }
 
 .article-summary-tools__text {
-  font-size: 1.45rem;
+  font-size: 1.3rem;
   line-height: 1;
   color: inherit;
-  opacity: 0.68;
+  opacity: 0.78;
 }
 
 .post-subtitle {
