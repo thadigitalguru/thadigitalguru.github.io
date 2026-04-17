@@ -150,7 +150,7 @@ layout: base
   padding: 1.25rem 1.35rem 1.3rem;
   border: 2px solid var(--border-color);
   border-radius: 1.9rem;
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
 }
 
 .article-summary-tools__label {
@@ -177,9 +177,9 @@ layout: base
   --tool-accent: #4a9eff;
   width: var(--tool-width, auto);
   max-width: 100%;
-  border: 2px solid #343434;
+  border: 2px solid var(--border-color);
   border-radius: 1.35rem;
-  background: #0c0c0c;
+  background: var(--bg-primary);
   color: var(--text-primary);
   padding: 0.8rem 1rem 0.8rem 0.95rem;
   font: inherit;
@@ -197,12 +197,12 @@ layout: base
 .article-summary-tools__button:hover,
 .article-summary-tools__copy:hover {
   border-color: var(--text-primary);
-  background: #111111;
+  background: var(--bg-secondary);
   transform: translateY(-1px);
 }
 
 .article-summary-tools__button[data-tool-name="ChatGPT"] {
-  border-color: #f0f0f0;
+  border-color: var(--border-color);
   --tool-width: 11.7rem;
 }
 
