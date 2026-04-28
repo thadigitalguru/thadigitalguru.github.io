@@ -58,6 +58,8 @@
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | absolute_url }}">
   {% endif %}
 
+  {% include gtm_head.html %}
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-12Y6EEZBS1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -65,7 +67,6 @@
     gtag('js', new Date());
     gtag('config', 'G-12Y6EEZBS1');
   </script>
-  {% include gtm_head.html %}
   {% include google_analytics.html %}
   {% include cloudflare_analytics.html %}
 

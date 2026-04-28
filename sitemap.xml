@@ -1,0 +1,81 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+
+
+<url>
+  <loc>https://thadigitalguru.github.io/</loc>
+  <lastmod>2026-04-20T06:16:11+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://thadigitalguru.github.io/services.html</loc>
+  <lastmod>2026-04-20T06:16:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thadigitalguru.github.io/blog.html</loc>
+  <lastmod>2026-04-20T06:16:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thadigitalguru.github.io/contact.html</loc>
+  <lastmod>2026-04-20T06:16:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thadigitalguru.github.io/blog/2026/04/15/scale-your-aeo-strategy-focus-on-the-follow-up/</loc>
+  <lastmod>2026-04-20T06:16:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thadigitalguru.github.io/blog/2026/02/20/from-chatbots-to-agents/</loc>
+  <lastmod>2026-04-20T06:16:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thadigitalguru.github.io/blog/2026/01/30/social-ads-vs-search-ads/</loc>
+  <lastmod>2026-04-20T06:16:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thadigitalguru.github.io/blog/2026/01/21/why-you-must-start-optimizing-for-brand-search-in-2026/</loc>
+  <lastmod>2026-04-20T06:16:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thadigitalguru.github.io/blog/2025/11/19/how-openai-gpt5-made-seo-irreplaceable/</loc>
+  <lastmod>2026-04-20T06:16:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thadigitalguru.github.io/blog/2025/11/19/guide-to-getting-cited-in-ai-answers/</loc>
+  <lastmod>2026-04-20T06:16:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thadigitalguru.github.io/blog/2024/10/08/google-search-console-regex-guide/</loc>
+  <lastmod>2026-04-20T06:16:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thadigitalguru.github.io/assets/pdfs/from-chatbots-to-agents-picking-the-best-ai-for-your-workflow-2026.pdf</loc>
+  <lastmod>2026-04-20T06:16:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://thadigitalguru.github.io/assets/pdfs/Social%20ads%20vs%20search%20ads.pdf</loc>
+  <lastmod>2026-04-20T06:16:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
