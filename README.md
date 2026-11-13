@@ -77,8 +77,9 @@ thadigitalguru.github.io/
 
 ### Prerequisites
 
-- Ruby (version 2.7+ recommended, 3.x for ARM Macs)
-- Bundler
+- Ruby 3.4.12 (the version in `.ruby-version`)
+- Bundler 4.0.23 (recorded in `Gemfile.lock`)
+- Node.js 24+ for the dependency-free UI regression checks
 - Git
 
 ### Setup
@@ -104,9 +105,23 @@ bundle exec jekyll serve
 http://localhost:4000
 ```
 
-### Note for ARM Mac Users
+### Verify before publishing
 
-If you're using Ruby 2.6.x on an ARM Mac (M1/M2), you may encounter compatibility issues with the google-protobuf gem. Consider upgrading to Ruby 3.x for local development.
+With the Ruby version above active, run:
+
+```bash
+bash scripts/verify.sh
+```
+
+This builds the site and checks UI behavior, navigation, HTML, internal links and assets, JSON-LD, sitemap destinations, and feed XML. CI runs the same command with the locked bundle.
+
+To check external destinations as well:
+
+```bash
+bundle exec ruby scripts/check-html.rb --external
+```
+
+On an Apple Silicon Mac, install `ruby@3.4` with Homebrew and put `/opt/homebrew/opt/ruby@3.4/bin` first in your shell's PATH, or install the version in `.ruby-version` with your Ruby version manager. Do not use macOS's system Ruby for this bundle.
 
 ## 📝 Adding New Posts
 
