@@ -13,12 +13,16 @@ title: 'Tag Index'
 {%- assign tags_list = site_tags | split:',' | sort -%}
 
 {%- for tag in tags_list -%}
-    <a href="#{{- tag -}}" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})</a>
+    {% assign tag_anchor = tag %}
+    {% if tag contains ' ' %}{% capture tag_anchor %}tag-{{ tag | slugify }}-{{ forloop.index }}{% endcapture %}{% endif %}
+    <a href="#{{ tag_anchor | escape }}" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})</a>
 {%- endfor -%}
 
 <div id="full-tags-list">
 {%- for tag in tags_list -%}
-    <h2 id="{{- tag -}}" class="linked-section">
+    {% assign tag_anchor = tag %}
+    {% if tag contains ' ' %}{% capture tag_anchor %}tag-{{ tag | slugify }}-{{ forloop.index }}{% endcapture %}{% endif %}
+    <h2 id="{{ tag_anchor | escape }}" class="linked-section">
         <i class="fas fa-tag" aria-hidden="true"></i>
         &nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})
     </h2>

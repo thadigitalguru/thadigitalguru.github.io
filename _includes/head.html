@@ -23,6 +23,8 @@
   {% capture description %}
   {%- if page.share-description -%}
   {{ page.share-description | strip_html | xml_escape }}
+  {%- elsif page.description -%}
+  {{ page.description | strip_html | xml_escape }}
   {%- elsif page.subtitle -%}
   {{ page.subtitle | strip_html | xml_escape }}
   {%- else -%}
@@ -153,8 +155,8 @@
   {% else %}
   <meta name="twitter:card" content="summary">
   {% endif %}
-  <meta name="twitter:site" content="@{{ site.social-network-links.twitter }}">
-  <meta name="twitter:creator" content="@{{ site.social-network-links.twitter }}">
+  <meta name="twitter:site" content="@thadigitalguru">
+  <meta name="twitter:creator" content="@thadigitalguru">
 
   <meta property="twitter:title" content="{{ title }}">
   <meta property="twitter:description" content="{{ description }}">

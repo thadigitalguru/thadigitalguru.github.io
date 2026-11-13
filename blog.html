@@ -2,6 +2,8 @@
 layout: page
 title: Blog
 description: "Technical SEO insights, growth marketing strategies, and digital marketing content"
+js:
+  - /assets/js/blog-filters.js
 ---
 
 <div class="blog-container">
@@ -21,16 +23,18 @@ description: "Technical SEO insights, growth marketing strategies, and digital m
 
   <!-- Category Filters -->
   <div class="category-filters">
-    <button class="filter-button active" data-filter="all">All Posts</button>
-    <button class="filter-button" data-filter="SEO">SEO</button>
-    <button class="filter-button" data-filter="AI">AI</button>
-    <button class="filter-button" data-filter="Digital Marketing">Digital Marketing</button>
-    <button class="filter-button" data-filter="Brand Building">Brand Building</button>
+    <button type="button" class="filter-button" data-filter="all" aria-pressed="true">All Posts</button>
+    <button type="button" class="filter-button" data-filter="SEO" aria-pressed="false">SEO</button>
+    <button type="button" class="filter-button" data-filter="AI" aria-pressed="false">AI</button>
+    <button type="button" class="filter-button" data-filter="Digital Marketing" aria-pressed="false">Digital Marketing</button>
+    <button type="button" class="filter-button" data-filter="Brand Building" aria-pressed="false">Brand Building</button>
   </div>
+  <p id="filter-results" role="status">Showing {{ site.posts.size }} articles.</p>
+  <p><a href="{{ '/categories/' | relative_url }}">Browse all topics</a></p>
 
   <div class="posts-grid" id="posts-grid">
     {% for post in site.posts %}
-    <article class="post-card" data-tags="{{ post.tags | join: ',' }}">
+    <article class="post-card" data-topics="{{ post.tags | concat: post.categories | join: ',' | escape }}">
       {% if post.image %}
       <div class="post-card-image">
         <a href="{{ post.url | relative_url }}">
@@ -87,35 +91,6 @@ description: "Technical SEO insights, growth marketing strategies, and digital m
   </div>
   {% endif %}
 </div>
-
-<script>
-  // Category filter functionality
-  document.addEventListener('DOMContentLoaded', function () {
-    const filterButtons = document.querySelectorAll('.filter-button');
-    const postCards = document.querySelectorAll('.post-card');
-
-    filterButtons.forEach(button => {
-      button.addEventListener('click', function () {
-        const filter = this.getAttribute('data-filter');
-
-        // Update active button
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        this.classList.add('active');
-
-        // Filter posts
-        postCards.forEach(card => {
-          const tags = card.getAttribute('data-tags');
-          if (filter === 'all' || (tags && tags.includes(filter))) {
-            card.style.display = 'block';
-            card.style.animation = 'fadeInUp 0.5s ease forwards';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-  });
-</script>
 
 <style>
   @keyframes fadeInUp {
@@ -200,7 +175,7 @@ description: "Technical SEO insights, growth marketing strategies, and digital m
   }
 
   .filter-button:hover,
-  .filter-button.active {
+  .filter-button[aria-pressed="true"] {
     background: var(--accent-color);
     border-color: var(--accent-color);
     color: var(--bg-primary);

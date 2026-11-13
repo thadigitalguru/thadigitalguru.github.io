@@ -205,6 +205,24 @@ header {
 }
 
 /* Blog Styles */
+.category-section {
+  margin-block: 2rem;
+}
+
+.category-posts {
+  padding-left: 1.25rem;
+}
+
+.category-posts li {
+  margin-bottom: 1rem;
+}
+
+.category-posts time {
+  display: block;
+  color: var(--text-secondary);
+  font-size: .85rem;
+}
+
 .posts-list {
   max-width: 800px;
   margin: 2rem auto;
