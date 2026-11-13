@@ -5,8 +5,8 @@ date: 2026-01-21
 categories: [SEO, Brand Search, Digital Marketing]
 tags: [brand search, seo, digital marketing, 2026]
 author: "Titus Kores"
-image: /assets/img/Branded-search.png
-cover-img: /assets/img/Branded-search.png
+image: /assets/img/branded-search.jpg
+cover-img: /assets/img/branded-search.jpg
 excerpt: "A comprehensive guide on why brand search optimization is crucial for your digital marketing strategy in 2026."
 ---
 

@@ -6,8 +6,8 @@ categories: [Digital Marketing, PPC, Social Media Advertising]
 tags: [social ads, search ads, marketing funnel, ppc strategy, facebook ads, google ads, digital marketing, advertising strategy]
 author: "Titus Kores"
 excerpt: "Terms like 'top of funnel,' 'middle of funnel,' and 'bottom of funnel' are often used as if they carry the same meaning across all marketing channels—but they don't. Learn why traditional funnel models fall short on social channels and what strategic approaches deliver better outcomes."
-image: /assets/img/Article1.png
-cover-img: /assets/img/Article1.png
+image: /assets/img/social-search-ads.jpg
+cover-img: /assets/img/social-search-ads.jpg
 permalink: /blog/2026/01/30/social-ads-vs-search-ads/
 ---
 
@@ -39,8 +39,6 @@ Because every search query reveals what the user wants, audience segmentation is
 Social platforms, however, operate differently—ads appear within attention streams rather than intent-driven searches, which means the funnel model doesn't apply in the same way.
 
 ## Social Ads Lack a Dependable Intent Signal
-
-![Marketing Funnel Stages](/assets/img/funnel-stages.jpg)
 
 Ad targeting on platforms like Meta, LinkedIn, and TikTok isn't driven by intent—it's driven by demographics and psychographics. You can target segments such as:
 
@@ -87,7 +85,7 @@ Treating everyone the same leads to inefficiency—you'll over-nurture those rea
 ## What Actually Happens When Someone Sees Your Social Ad
 
 <div style="text-align: center; margin: 2rem 0;">
-  <img src="/assets/img/Article2.png" alt="Marketing Funnel Stages" style="max-width: 100%; height: auto; border-radius: 8px;">
+  <img src="/assets/img/marketing-funnel-stages.jpg" alt="Marketing Funnel Stages" style="max-width: 100%; height: auto; border-radius: 8px;">
 </div>
 
 ### High Intent (1–2%)
@@ -203,11 +201,9 @@ If retargeting isn't "making money," it's likely because those users are simply 
 
 ---
 
-## Download the Full Guide
+## Share This Guide
 
-Want to keep this guide handy? Download the complete PDF version:
-
-[📄 Download: Social Ads vs Search Ads Guide (PDF)](/assets/pdfs/Social%20ads%20vs%20search%20ads.pdf)
+Found this guide useful? Share it with your team or bookmark it for reference.
 
 ---
 

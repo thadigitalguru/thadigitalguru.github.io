@@ -6,10 +6,10 @@ date: 2026-02-20 12:00:00 +0300
 categories: [AI, Technology]
 tags: [AI agents, chatbots, ChatGPT, Claude, Gemini, NotebookLM, AI models, agentic AI, AI workflow, AI tools 2026]
 author: "Titus Kores"
-image: /assets/img/posts/from-chatbots-to-agents/ai-2026.png
-cover-img: /assets/img/posts/from-chatbots-to-agents/ai-2026.png
-thumbnail-img: /assets/img/posts/from-chatbots-to-agents/ai-2026.png
-share-img: /assets/img/posts/from-chatbots-to-agents/ai-2026.png
+image: /assets/img/posts/from-chatbots-to-agents/ai-2026.jpg
+cover-img: /assets/img/posts/from-chatbots-to-agents/ai-2026.jpg
+thumbnail-img: /assets/img/posts/from-chatbots-to-agents/ai-2026.jpg
+share-img: /assets/img/posts/from-chatbots-to-agents/ai-2026.jpg
 share-description: "AI has moved from simple chatbots to autonomous agents. Learn how to choose the right AI model, app, and harness for your workflow in 2026 — covering ChatGPT, Claude, Gemini, and more."
 excerpt: "AI has moved beyond chatbots. In the agentic era, choosing the right AI means understanding Models, Apps, and Harnesses. Here's how to pick the best AI for your workflow in 2026."
 permalink: /blog/2026/02/20/from-chatbots-to-agents/
@@ -24,7 +24,7 @@ Artificial intelligence has moved beyond the "if" stage — it's now about **how
 Just a few months ago, "using AI" mostly meant prompting a chatbot through a back-and-forth conversation. But recently, it's become feasible to treat AI as an **agent** — one you can assign tasks to, which it then carries out autonomously using whatever tools it needs. This shift means you have to think about three factors when choosing an AI: the **Models**, the **Apps**, and the **Harnesses**.
 
 <div style="text-align: center; margin: 2rem 0;">
-  <img src="/assets/img/posts/from-chatbots-to-agents/ai-2026.png" alt="AI landscape in 2026 — Models, Apps, and Harnesses overview" style="max-width: 100%; height: auto; border-radius: 8px;" loading="lazy">
+  <img src="/assets/img/posts/from-chatbots-to-agents/ai-2026.jpg" alt="AI landscape in 2026 — Models, Apps, and Harnesses overview" style="max-width: 100%; height: auto; border-radius: 8px;" loading="lazy">
 </div>
 
 **Models** are the core intelligence behind AI systems — the "brains" that power everything. The leading ones right now are GPT‑5.2/5.3, Claude Opus 4.6, and Gemini 3.1 Pro (though version numbers are changing faster than ever as companies release updates). These models define how capable an AI is — how effectively it can reason, write, code, analyze spreadsheets, or interpret and generate images. Benchmarks measure their performance, and AI companies constantly compete to refine them. So when people say "Claude writes better" or "ChatGPT handles math best," they're really talking about the models themselves.
@@ -56,7 +56,7 @@ Other providers exist, but for most users they're currently behind on models, ap
 > For casual chatting, smaller or free models are okay. For anything important, choose an advanced model.
 
 <div style="text-align: center; margin: 2rem 0;">
-  <img src="/assets/img/posts/from-chatbots-to-agents/models-2026.png" alt="Comparison of leading AI models in 2026 — Claude Opus 4.6, Gemini 3 Pro, and ChatGPT 5.2" style="max-width: 100%; height: auto; border-radius: 8px;" loading="lazy">
+  <img src="/assets/img/posts/from-chatbots-to-agents/models-2026.jpg" alt="Comparison of leading AI models in 2026 — Claude Opus 4.6, Gemini 3 Pro, and ChatGPT 5.2" style="max-width: 100%; height: auto; border-radius: 8px;" loading="lazy">
 </div>
 
 ## Picking the Right Model
@@ -66,7 +66,7 @@ Whenever you use an AI app on web or mobile, the most important choice is which 
 **In ChatGPT**, the default "ChatGPT 5.2" is really an auto mode that can route you to different variants, from weaker mini models up to stronger ones like 5.2 Thinking or 5.2 Pro. Paying lets you choose more powerful versions and control how much the model "thinks" before answering. For complex tasks, you want the deeper-thinking modes, even if they are slower and cost more.
 
 <div style="text-align: center; margin: 2rem 0;">
-  <img src="/assets/img/posts/from-chatbots-to-agents/chatgpt.png" alt="ChatGPT 5.2 model selection interface showing standard and Thinking modes" style="max-width: 100%; height: auto; border-radius: 8px;" loading="lazy">
+  <img src="/assets/img/posts/from-chatbots-to-agents/chatgpt.jpg" alt="ChatGPT 5.2 model selection interface showing standard and Thinking modes" style="max-width: 100%; height: auto; border-radius: 8px;" loading="lazy">
 </div>
 
 **Gemini** gives you options like Gemini 3 Flash, Gemini 3 Thinking, and Gemini 3 Pro, with Gemini Deep Think available on some higher-end plans. For serious work, you should pick Gemini 3 Pro or Thinking, and use Deep Think only for very hard problems.
@@ -100,7 +100,7 @@ The main chatbots are where most people start, but the most powerful things ofte
 **Claude Cowork** is something new: a desktop agent for non-technical work. It runs on your computer in an isolated virtual machine, works directly with your files and browser, and can follow multi-step plans like organizing expenses or pulling data from PDFs into a spreadsheet. You describe the outcome; it breaks the work into steps and executes them. It is still a research preview, but it shows where AI is heading: agents that actually do your work, not just talk about it.
 
 <div style="text-align: center; margin: 2rem 0;">
-  <img src="/assets/img/posts/from-chatbots-to-agents/notebooklm.png" alt="NotebookLM interface showing interactive knowledge base with sources, chat, and study tools" style="max-width: 100%; height: auto; border-radius: 8px;" loading="lazy">
+  <img src="/assets/img/posts/from-chatbots-to-agents/notebooklm.jpg" alt="NotebookLM interface showing interactive knowledge base with sources, chat, and study tools" style="max-width: 100%; height: auto; border-radius: 8px;" loading="lazy">
 </div>
 
 **NotebookLM** tackles a different problem: making sense of lots of information. You can upload documents, videos, and links, and it builds an interactive knowledge base you can query and turn into slides, mind maps, videos, or even AI-generated "podcasts" that discuss your content. This is especially useful for students, researchers, and anyone working with large piles of documents.
