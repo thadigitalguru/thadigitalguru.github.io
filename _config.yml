@@ -1,14 +1,15 @@
 # Site settings - Updated to force rebuild
-title: Titus Kores
-description: SEO Specialist & Digital Marketing Expert helping businesses grow their online presence through data-driven strategies.
+title: Titus Kores - Technical SEO for Google & AI Search
+description: Technical SEO consultant helping SaaS & e-commerce rank in Google and get cited in AI answers. Technical audits, AEO strategy, GSC data sprints.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://thadigitalguru.github.io" # the base hostname & protocol for your site
+url: "https://thadigitalguru.github.io" # TODO: change to https://www.yourdomain.com when custom domain is live
 
 # Build settings
 markdown: kramdown
 plugins:
   - jekyll-seo-tag
   - jekyll-feed
+  - jekyll-sitemap
 
 # Exclude from processing
 exclude:

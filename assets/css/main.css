@@ -231,6 +231,32 @@ header {
   border: 1px solid var(--border-color);
 }
 
+.contact-intro {
+  margin-bottom: 2rem;
+}
+
+.contact-intro p {
+  margin-block: 1rem;
+}
+
+.contact-methods {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.contact-card ul {
+  padding-left: 1.25rem;
+}
+
+.contact-card li + li {
+  margin-top: .75rem;
+}
+
+.contact-note {
+  color: var(--text-secondary);
+  font-size: .9rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   header {

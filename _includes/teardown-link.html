@@ -1,0 +1,5 @@
+{%- capture email_body -%}
+Website URL:
+Business goal:
+{%- endcapture -%}
+<a class="{{ include.class | default: 'contact-button' }}" href="mailto:{{ site.author.email }}?subject={{ 'Free SEO teardown request' | url_encode | replace: '+', '%20' }}&amp;body={{ email_body | url_encode | replace: '+', '%20' }}">{{ include.label | default: 'Request my free teardown' }}</a>

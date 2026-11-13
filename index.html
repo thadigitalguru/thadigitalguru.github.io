@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description"
-        content="Titus Kores - Technical SEO specialist, Growth Marketer, and Content Writer helping businesses grow through data-driven SEO strategies and technical optimization.">
+        content="Technical SEO consultant for Google & AI Search. Titus Kores helps SaaS & e-commerce get crawled, ranked, and cited in AI answers with technical audits, AEO strategy, and GSC data.">
     <meta name="author" content="{{site.author.name}}">
     <meta name="robots" content="index,follow">
     <meta name="theme-color" content="#000000">
@@ -35,13 +35,13 @@
     <link rel="icon" type="image/png" sizes="512x512" href="{{site.url}}/assets/img/favicon.png">
     <link rel="apple-touch-icon" href="{{site.url}}/assets/img/favicon.png">
     <link rel="canonical" href="{{site.url}}">
-    <title>{{site.title}} - Technical SEO & Growth Marketing Expert</title>
+    <title>Titus Kores - Technical SEO for Google & AI Search</title>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{site.title}} - Technical SEO Expert">
+    <meta property="og:title" content="Titus Kores - Technical SEO for Google & AI Search">
     <meta property="og:description"
-        content="Technical SEO specialist helping businesses grow through data-driven strategies, compelling content, and technical optimization.">
+        content="Technical SEO consultant helping SaaS & e-commerce get crawled, ranked, and cited in AI answers. Technical audits, AEO strategy, GSC + Python insights.">
     <meta property="og:url" content="{{site.url}}">
     <meta property="og:image" content="{{site.url}}/assets/img/profile-pic.jpg">
     <meta property="og:site_name" content="{{site.title}}">
@@ -50,9 +50,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@thadigitalguru">
     <meta name="twitter:creator" content="@thadigitalguru">
-    <meta name="twitter:title" content="{{site.title}} - Technical SEO Expert">
+    <meta name="twitter:title" content="Titus Kores - Technical SEO for Google & AI Search">
     <meta name="twitter:description"
-        content="Technical SEO specialist helping businesses grow through data-driven strategies.">
+        content="Technical SEO consultant helping SaaS & e-commerce rank in Google and get cited in AI answers.">
     <meta name="twitter:image" content="{{site.url}}/assets/img/profile-pic.jpg">
 
     <!-- Structured Data -->
@@ -63,12 +63,30 @@
 "name":"Titus Kores",
 "url":"{{site.url}}",
 "image":"{{site.url}}/assets/img/profile-pic.jpg",
-"jobTitle":"Technical SEO Specialist",
-"description":"Technical SEO, Growth Marketer, Content Writer, Python and Personal Development enthusiast",
+"jobTitle":"Technical SEO Consultant for AI Search",
+"description":"Technical SEO consultant helping SaaS and e-commerce rank in Google and get cited in AI answers",
+"knowsAbout":["Technical SEO","AI Search Optimization","Answer Engine Optimization","Google Search Console","Python for SEO","Brand Search Optimization"],
 "sameAs":[
 "https://x.com/thadigitalguru",
 "https://www.linkedin.com/in/titus-kores-610201200/",
 "https://github.com/thadigitalguru"
+]
+}
+</script>
+    <script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"ProfessionalService",
+"name":"Titus Kores - Technical SEO for AI Search",
+"url":"{{site.url}}",
+"image":"{{site.url}}/assets/img/profile-pic.jpg",
+"description":"Technical SEO audits, AI visibility (GEO/AEO) strategy, and GSC data sprints for SaaS and e-commerce.",
+"priceRange":"$$",
+"areaServed":"Worldwide",
+"founder":{"@type":"Person","name":"Titus Kores"},
+"sameAs":[
+"https://x.com/thadigitalguru",
+"https://www.linkedin.com/in/titus-kores-610201200/"
 ]
 }
 </script>
@@ -167,7 +185,8 @@
             border: 3px solid var(--accent-color);
             padding: .4rem 1.2rem;
             background: var(--bg-secondary);
-            transition: border-color .3s
+            transition: border-color .3s;
+            text-decoration: none
         }
 
         [data-theme=light] .logo {
@@ -287,26 +306,28 @@
             }
         }
 
-        .social-proof {
-            display: flex;
-            gap: 2rem;
+        .engagement-summary {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
             margin-top: 2rem;
             padding-top: 2rem;
-            border-top: 1px solid var(--border-color)
+            border-top: 1px solid var(--border-color);
+            list-style: none
         }
 
-        .social-proof-item {
+        .engagement-summary li {
             text-align: center
         }
 
-        .social-proof-item .number {
-            font-size: 2rem;
+        .engagement-summary strong {
+            font-size: clamp(1rem, 3vw, 2rem);
             font-weight: 700;
             color: var(--accent-color);
             display: block
         }
 
-        .social-proof-item .label {
+        .engagement-summary span {
             font-size: 0.9rem;
             color: var(--text-secondary)
         }
@@ -586,7 +607,7 @@
     {% endif %}
     <a href="#main" class="skip-link">Skip to main content</a>
     <header role="banner">
-        <div class="logo">{{site.title}}</div>
+        <a class="logo" href="{{ '/' | relative_url }}">{{site.author.name}}</a>
         <div class="header-right">
             <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light mode">
                 <span id="theme-icon" aria-hidden="true">☀️</span>
@@ -615,32 +636,21 @@
     <main id="main" role="main">
         <section class="hero" aria-labelledby="intro-heading">
             <div class="hero-content">
-                <h1 id="intro-heading">Hi, I'm <span class="typing-text" id="typing-text">Titus</span></h1>
-                <p>I'm a <strong>Technical SEO</strong>, <strong>Growth Marketer</strong>, <strong>Content
-                        Writer</strong>, <strong>Python</strong> and <strong>Personal Development</strong> enthusiast.
+                <h1 id="intro-heading">Technical SEO for <span class="typing-text" id="typing-text">Google & AI Search</span></h1>
+                <p>I'm <strong>Titus Kores</strong> — a <strong>Technical SEO consultant</strong> for <strong>AI Search</strong>.
                 </p>
-                <p>I help businesses grow their online presence through data-driven SEO strategies, compelling content,
-                    and technical optimization.</p>
-                <div class="social-proof">
-                    <div class="social-proof-item">
-                        <span class="number">50+</span>
-                        <span class="label">Clients Helped</span>
-                    </div>
-                    <div class="social-proof-item">
-                        <span class="number">200%</span>
-                        <span class="label">Avg. Traffic Growth</span>
-                    </div>
-                    <div class="social-proof-item">
-                        <span class="number">5+</span>
-                        <span class="label">Years Experience</span>
-                    </div>
-                </div>
+                <p>I help SaaS & e-commerce get crawled, ranked, and <strong>cited in AI answers</strong> through technical audits, AEO strategy, and GSC data.</p>
+                <p><a href="/services.html">See SEO services →</a> <a href="/blog.html">Read AI search guides →</a></p>
+                <ul class="engagement-summary" aria-label="What you can expect">
+                    <li><strong>Audit</strong><span>Clear fixes</span></li>
+                    <li><strong>Plan</strong><span>Useful content</span></li>
+                    <li><strong>Data</strong><span>Next steps</span></li>
+                </ul>
             </div>
             <div class="hero-image">
                 <img src="/assets/img/profile-pic.jpg" alt="Titus Kores - Technical SEO Specialist" width="400"
                     height="400" loading="eager">
-                <a href="mailto:{{site.author.email}}" class="cta-button"
-                    aria-label="Send email to start conversation">START CONVERSATION</a>
+                {% include teardown-link.html class="cta-button" label="Get a free SEO teardown" %}
             </div>
         </section>
 
@@ -737,7 +747,7 @@
         });
 
         // Typing animation for hero section
-        const roles = ["Titus", "a Technical SEO", "a Growth Marketer", "a Content Writer"];
+        const roles = ["Google & AI Search", "Technical SEO Audits", "AI Visibility (GEO/AEO)", "GSC + Python Insights"];
         let roleIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
