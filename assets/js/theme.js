@@ -1,19 +1,35 @@
+function applyTheme(theme) {
+  const isLight = theme === "light";
+  document.documentElement.setAttribute("data-theme", isLight ? "light" : "dark");
+  document.querySelectorAll(".theme-toggle").forEach(button => {
+    button.setAttribute("aria-label", `Switch to ${isLight ? "dark" : "light"} theme`);
+  });
+  const icon = document.getElementById("theme-icon");
+  if (icon) icon.textContent = isLight ? "Dark" : "Light";
+}
+
 function toggleTheme() {
-  const e = document.documentElement,
-    t = document.getElementById("theme-icon"),
-    a = e.getAttribute("data-theme");
+  const theme = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
+  applyTheme(theme);
   try {
-    a === "light" ? (e.removeAttribute("data-theme"), localStorage.setItem("theme", "dark"), t && (t.textContent = "☀️")) : (e.setAttribute("data-theme", "light"), localStorage.setItem("theme", "light"), t && (t.textContent = "🌙"))
-  } catch (e) {
-    console.warn("Theme toggle failed:", e)
+    localStorage.setItem("theme", theme);
+  } catch (error) {
+    console.warn("Could not save theme:", error);
   }
+}
+
+function setMenuOpen(open, restoreFocus = false) {
+  const menu = document.getElementById("nav-menu");
+  const button = document.querySelector(".menu-toggle");
+  if (!menu || !button) return;
+  menu.classList.toggle("active", open);
+  button.setAttribute("aria-expanded", String(open));
+  if (restoreFocus) button.focus();
 }
 
 function toggleMenu() {
   const menu = document.getElementById("nav-menu");
-  if (menu) {
-    menu.classList.toggle("active");
-  }
+  if (menu) setMenuOpen(!menu.classList.contains("active"));
 }
 
 function getSummaryPrompt(articleUrl) {
@@ -59,26 +75,24 @@ function openSummaryTool(url) {
 }
 
 document.addEventListener("click", e => {
-  const t = document.getElementById("nav-menu");
-  if (t) {
-    t.classList.contains("active") && !e.target.closest(".menu-toggle") && !e.target.closest(".nav-menu") && t.classList.remove("active")
+  if (!e.target.closest(".menu-toggle") && !e.target.closest(".nav-menu")) {
+    setMenuOpen(false);
   }
 });
 
+document.addEventListener("keydown", event => {
+  const menu = document.getElementById("nav-menu");
+  if (event.key === "Escape" && menu?.classList.contains("active")) setMenuOpen(false, true);
+});
+
 (() => {
+  let theme = "dark";
   try {
-    const e = localStorage.getItem("theme");
-    const t = document.getElementById("theme-icon");
-    if (e === "light") {
-      document.documentElement.setAttribute("data-theme", "light");
-      if (t) t.textContent = "🌙";
-    } else {
-      document.documentElement.removeAttribute("data-theme");
-      if (t) t.textContent = "☀️";
-    }
-  } catch (e) {
-    console.warn("Could not load theme:", e)
+    theme = localStorage.getItem("theme") || "dark";
+  } catch (error) {
+    console.warn("Could not load theme:", error);
   }
+  applyTheme(theme);
 })();
 
 document.addEventListener("DOMContentLoaded", () => {

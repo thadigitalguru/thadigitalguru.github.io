@@ -16,8 +16,8 @@
   --text-primary: #000;
   --text-secondary: #555;
   --border-color: #ddd;
-  --accent-color: #4A9EFF;
-  --accent-hover: #7BB8FF;
+  --accent-color: #005eb8;
+  --accent-hover: #00478a;
   --shadow: rgba(0, 0, 0, 0.1);
 }
 
@@ -54,6 +54,44 @@ a {
 
 a:hover {
   color: var(--accent-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+:where(a, button, input, summary):focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  top: .5rem;
+  left: .5rem;
+  z-index: 1000;
+  padding: .75rem 1rem;
+  color: var(--bg-primary);
+  background: var(--text-primary);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .article-card, .post-card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* Common Components */

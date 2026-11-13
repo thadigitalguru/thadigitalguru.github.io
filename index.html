@@ -124,15 +124,15 @@
             --text-primary: #000;
             --text-secondary: #555;
             --border-color: #000;
-            --accent-color: #4A9EFF;
+            --accent-color: #005eb8;
             --shadow: rgba(0, 0, 0, .1)
         }
 
         html,
         body {
             font-family: 'Courier New', Courier, Monaco, Menlo, Consolas, monospace;
-            background: #000000;
-            color: #f5f5f5;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
             margin: 0;
             transition: background .3s, color .3s
@@ -197,6 +197,19 @@
             display: flex;
             align-items: center;
             gap: 1rem
+        }
+
+        .theme-toggle,
+        .menu-toggle {
+            min-width: 44px;
+            min-height: 44px;
+            padding: .5rem .75rem;
+            font: inherit;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: .5rem;
+            cursor: pointer;
         }
 
         .social-links a:hover,
@@ -286,24 +299,6 @@
             font-weight: 700;
             color: var(--accent-color);
             min-height: 6rem
-        }
-
-        .hero-content h1 .typing-text {
-            border-right: 3px solid var(--accent-color);
-            animation: blink 1s infinite
-        }
-
-        @keyframes blink {
-
-            0%,
-            50% {
-                border-color: var(--accent-color)
-            }
-
-            51%,
-            100% {
-                border-color: transparent
-            }
         }
 
         .engagement-summary {
@@ -568,7 +563,8 @@
 
             .social-links {
                 width: 100%;
-                justify-content: center
+                justify-content: center;
+                flex-wrap: wrap
             }
 
             main {
@@ -596,21 +592,34 @@
                 gap: 1rem
             }
         }
+        :where(a, button):focus-visible {
+            outline: 3px solid var(--accent-color);
+            outline-offset: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+            .article-card { opacity: 1 !important; transform: none !important; }
+        }
     </style>
 </head>
 
 <body>
     {% if site.gtm %}
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.gtm }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe title="Google Tag Manager" src="https://www.googletagmanager.com/ns.html?id={{ site.gtm }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     {% endif %}
     <a href="#main" class="skip-link">Skip to main content</a>
     <header role="banner">
         <a class="logo" href="{{ '/' | relative_url }}">{{site.author.name}}</a>
         <div class="header-right">
-            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light mode">
-                <span id="theme-icon" aria-hidden="true">☀️</span>
+            <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch to light theme">
+                <span id="theme-icon" aria-hidden="true">Light</span>
             </button>
             <nav class="social-links" aria-label="Social media links">
                 <a href="https://x.com/thadigitalguru" target="_blank" rel="noopener noreferrer"
@@ -620,7 +629,7 @@
                 <a href="https://github.com/thadigitalguru" target="_blank" rel="noopener noreferrer"
                     aria-label="View GitHub profile">GITHUB</a>
             </nav>
-            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+            <button class="menu-toggle" type="button" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
                 <span aria-hidden="true">☰</span>
             </button>
             <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
@@ -633,10 +642,10 @@
         </div>
     </header>
 
-    <main id="main" role="main">
+    <main id="main" tabindex="-1">
         <section class="hero" aria-labelledby="intro-heading">
             <div class="hero-content">
-                <h1 id="intro-heading">Technical SEO for <span class="typing-text" id="typing-text">Google & AI Search</span></h1>
+                <h1 id="intro-heading">Technical SEO for Google & AI Search</h1>
                 <p>I'm <strong>Titus Kores</strong> — a <strong>Technical SEO consultant</strong> for <strong>AI Search</strong>.
                 </p>
                 <p>I help SaaS & e-commerce get crawled, ranked, and <strong>cited in AI answers</strong> through technical audits, AEO strategy, and GSC data.</p>
@@ -713,96 +722,7 @@
             experience.</p>
     </noscript>
 
-    <script>
-        function toggleTheme() {
-            const e = document.documentElement,
-                t = document.getElementById("theme-icon"),
-                a = e.getAttribute("data-theme");
-            try {
-                a === "light" ? (e.removeAttribute("data-theme"), localStorage.setItem("theme", "dark"), t && (t.textContent = "☀️")) : (e.setAttribute("data-theme", "light"), localStorage.setItem("theme", "light"), t && (t.textContent = "🌙"))
-            } catch (e) {
-                console.warn("Theme toggle failed:", e)
-            }
-        }
-
-        function toggleMenu() {
-            const menu = document.getElementById("nav-menu");
-            const menuToggle = document.querySelector(".menu-toggle");
-            if (menu) {
-                menu.classList.toggle("active");
-                const isActive = menu.classList.contains("active");
-                menuToggle.setAttribute("aria-expanded", isActive);
-            }
-        }
-
-        document.addEventListener("click", e => {
-            const menu = document.getElementById("nav-menu");
-            const menuToggle = document.querySelector(".menu-toggle");
-            if (menu && menu.classList.contains("active")) {
-                if (!e.target.closest(".menu-toggle") && !e.target.closest(".nav-menu")) {
-                    menu.classList.remove("active");
-                    menuToggle.setAttribute("aria-expanded", "false");
-                }
-            }
-        });
-
-        // Typing animation for hero section
-        const roles = ["Google & AI Search", "Technical SEO Audits", "AI Visibility (GEO/AEO)", "GSC + Python Insights"];
-        let roleIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingElement = document.getElementById("typing-text");
-
-        function typeText() {
-            if (!typingElement) return;
-
-            const currentRole = roles[roleIndex];
-
-            if (isDeleting) {
-                typingElement.textContent = currentRole.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingElement.textContent = currentRole.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            let typeSpeed = isDeleting ? 50 : 100;
-
-            if (!isDeleting && charIndex === currentRole.length) {
-                typeSpeed = 2000;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                roleIndex = (roleIndex + 1) % roles.length;
-                typeSpeed = 500;
-            }
-
-            setTimeout(typeText, typeSpeed);
-        }
-
-        // Start typing animation when page loads
-        document.addEventListener("DOMContentLoaded", () => {
-            if (document.getElementById("typing-text")) {
-                setTimeout(typeText, 1000);
-            }
-        });
-
-        (() => {
-            try {
-                const e = localStorage.getItem("theme");
-                const t = document.getElementById("theme-icon");
-                if (e === "light") {
-                    document.documentElement.setAttribute("data-theme", "light");
-                    if (t) t.textContent = "🌙";
-                } else {
-                    document.documentElement.removeAttribute("data-theme");
-                    if (t) t.textContent = "☀️";
-                }
-            } catch (e) {
-                console.warn("Could not load theme:", e)
-            }
-        })();
-    </script>
+    <script src="{{ '/assets/js/theme.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 </body>
 
 </html>
