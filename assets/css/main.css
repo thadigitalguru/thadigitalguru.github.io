@@ -95,6 +95,60 @@ a:hover {
 }
 
 /* Layout Elements */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.25rem clamp(1rem, 4vw, 4rem);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.site-brand {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: .625rem .75rem;
+  color: var(--text-primary);
+  border-radius: .25rem;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--accent-color);
+  text-decoration: underline;
+  text-underline-offset: .3em;
+}
+
+.site-header .theme-toggle {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+@media (max-width: 600px) {
+  .site-header .site-nav {
+    order: 3;
+    flex-basis: 100%;
+    justify-content: space-between;
+  }
+
+  .site-header .site-nav a {
+    padding-inline: .5rem;
+  }
+}
+
 header {
   padding: 1rem 4rem;
   max-width: 1400px;

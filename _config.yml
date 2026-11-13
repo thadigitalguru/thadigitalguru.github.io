@@ -55,11 +55,12 @@ author:
 navigation:
   - title: Home
     url: /
-
+  - title: Services
+    url: /services.html
   - title: Blog
-    url: /blog
+    url: /blog.html
   - title: Contact
-    url: /contact
+    url: /contact.html
 
 # Site footer
 footer:
