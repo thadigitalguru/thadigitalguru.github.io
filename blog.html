@@ -10,16 +10,12 @@ description: "Technical SEO insights, growth marketing strategies, and digital m
       crafted to help you stay ahead in the ever-changing world of search and digital marketing.</p>
   </div>
 
-  <!-- Newsletter Signup -->
+  <!-- Article updates -->
   <div class="newsletter-section">
     <div class="newsletter-content">
-      <h3>📧 Subscribe to My Newsletter</h3>
-      <p>Get the latest SEO tips, growth strategies, and digital marketing insights delivered straight to your inbox.
-      </p>
-      <form class="newsletter-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address">
-        <button type="submit" class="newsletter-button">Subscribe</button>
-      </form>
+      <h2>Follow new articles</h2>
+      <p>Add the RSS feed to your reader for new SEO, growth, and AI search articles. No email signup required.</p>
+      <a class="newsletter-button" href="{{ '/feed.xml' | relative_url }}">Subscribe via RSS</a>
     </div>
   </div>
 
@@ -140,7 +136,7 @@ description: "Technical SEO insights, growth marketing strategies, and digital m
     padding: 2rem 1rem;
   }
 
-  /* Newsletter Section */
+  /* Article updates */
   .newsletter-section {
     background: var(--bg-secondary);
     border: 2px solid var(--border-color);
@@ -151,7 +147,7 @@ description: "Technical SEO insights, growth marketing strategies, and digital m
     animation: fadeInUp 0.6s ease forwards;
   }
 
-  .newsletter-content h3 {
+  .newsletter-content h2 {
     color: var(--accent-color);
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
@@ -162,33 +158,8 @@ description: "Technical SEO insights, growth marketing strategies, and digital m
     margin-bottom: 1.5rem;
   }
 
-  .newsletter-form {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  .newsletter-form input[type="email"] {
-    flex: 1;
-    min-width: 250px;
-    padding: 0.75rem 1rem;
-    border: 2px solid var(--border-color);
-    border-radius: 8px;
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    font-family: inherit;
-    font-size: 1rem;
-  }
-
-  .newsletter-form input[type="email"]:focus {
-    outline: none;
-    border-color: var(--accent-color);
-  }
-
   .newsletter-button {
+    display: inline-block;
     padding: 0.75rem 2rem;
     background: var(--accent-color);
     color: var(--bg-primary);
@@ -203,6 +174,7 @@ description: "Technical SEO insights, growth marketing strategies, and digital m
 
   .newsletter-button:hover {
     background: var(--accent-hover);
+    color: var(--bg-primary);
     transform: translateY(-2px);
   }
 
@@ -416,14 +388,6 @@ description: "Technical SEO insights, growth marketing strategies, and digital m
 
     .blog-container {
       padding: 1rem;
-    }
-
-    .newsletter-form {
-      flex-direction: column;
-    }
-
-    .newsletter-form input[type="email"] {
-      min-width: 100%;
     }
 
     .category-filters {
