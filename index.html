@@ -101,179 +101,8 @@
 }
 </script>
 
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box
-        }
-
-        :root {
-            --bg-primary: #000000;
-            --bg-secondary: #0a0a0a;
-            --text-primary: #f5f5f5;
-            --text-secondary: #b0b0b0;
-            --border-color: #f5f5f5;
-            --accent-color: #4A9EFF;
-            --shadow: rgba(255, 255, 255, .1)
-        }
-
-        [data-theme=light] {
-            --bg-primary: #f5f5f5;
-            --bg-secondary: #fff;
-            --text-primary: #000;
-            --text-secondary: #555;
-            --border-color: #000;
-            --accent-color: #005eb8;
-            --shadow: rgba(0, 0, 0, .1)
-        }
-
-        html,
-        body {
-            font-family: 'Courier New', Courier, Monaco, Menlo, Consolas, monospace;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            margin: 0;
-            transition: background .3s, color .3s
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: #000000;
-            z-index: 9999;
-            pointer-events: none;
-        }
-
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--text-primary);
-            color: var(--bg-primary);
-            padding: .5rem 1rem;
-            z-index: 100;
-            text-decoration: none
-        }
-
-        .skip-link:focus {
-            top: 0
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 4rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-            background: var(--bg-secondary);
-            border-top: 0;
-            border-bottom: 1px solid #444
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            border: 3px solid var(--accent-color);
-            padding: .4rem 1.2rem;
-            background: var(--bg-secondary);
-            transition: border-color .3s;
-            text-decoration: none
-        }
-
-        [data-theme=light] .logo {
-            color: #003366
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 1rem
-        }
-
-        .theme-toggle,
-        .menu-toggle {
-            min-width: 44px;
-            min-height: 44px;
-            padding: .5rem .75rem;
-            font: inherit;
-            color: var(--text-primary);
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: .5rem;
-            cursor: pointer;
-        }
-
-        .social-links a:hover,
-        .cta-button:hover,
-        .nav-menu a:hover {
-            background: var(--border-color);
-            color: var(--bg-primary)
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem
-        }
-
-        .social-links a,
-        .cta-button,
-        .nav-menu a {
-            padding: .5rem 1.5rem;
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 500;
-            transition: all .3s
-        }
-
-        .nav-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 4rem;
-            background: var(--bg-secondary);
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            box-shadow: 0 4px 12px var(--shadow);
-            padding: 1rem;
-            min-width: 180px;
-            z-index: 99;
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: opacity 0.3s ease, transform 0.3s ease
-        }
-
-        .nav-menu.active {
-            display: flex;
-            flex-direction: column;
-            gap: .5rem;
-            opacity: 1;
-            transform: translateY(0)
-        }
-
-        .nav-menu a {
-            border: 2px solid transparent;
-            text-align: center;
-            padding: .75rem 1rem;
-            border-radius: 6px;
-            transition: all 0.3s ease
-        }
-
-        .nav-menu a:hover {
-            border-color: var(--accent-color);
-            background: var(--bg-primary)
-        }
-
         main {
             max-width: 1400px;
             margin: 4rem auto;
@@ -361,19 +190,6 @@
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
             color: var(--text-secondary)
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: var(--accent-color)
-        }
-
-        a {
-            color: var(--accent-color)
         }
 
         .hero-image {
@@ -506,67 +322,7 @@
             color: var(--text-secondary)
         }
 
-        footer {
-            background: var(--bg-secondary);
-            border-top: 2px solid var(--border-color);
-            padding: 3rem 4rem;
-            margin-top: 4rem;
-            transition: background .3s
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            text-align: center
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap
-        }
-
-        .footer-links a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: opacity .3s
-        }
-
-        .footer-links a:hover {
-            opacity: .7
-        }
-
-        .footer-copyright {
-            color: var(--text-secondary);
-            font-size: .9rem;
-            margin: 0
-        }
-
         @media (max-width:768px) {
-            header {
-                padding: 1rem 2rem;
-                flex-direction: column;
-                gap: 1rem
-            }
-
-            .logo {
-                font-size: 2rem
-            }
-
-            .header-right {
-                flex-direction: column;
-                width: 100%
-            }
-
-            .social-links {
-                width: 100%;
-                justify-content: center;
-                flex-wrap: wrap
-            }
-
             main {
                 padding: 0 2rem
             }
@@ -584,63 +340,14 @@
                 grid-template-columns: 1fr
             }
 
-            footer {
-                padding: 2rem
-            }
-
-            .footer-links {
-                gap: 1rem
-            }
-        }
-        :where(a, button):focus-visible {
-            outline: 3px solid var(--accent-color);
-            outline-offset: 4px;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation: none !important;
-                transition: none !important;
-                scroll-behavior: auto !important;
-            }
-            .article-card { opacity: 1 !important; transform: none !important; }
         }
     </style>
 </head>
 
 <body>
-    {% if site.gtm %}
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe title="Google Tag Manager" src="https://www.googletagmanager.com/ns.html?id={{ site.gtm }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    {% endif %}
-    <a href="#main" class="skip-link">Skip to main content</a>
-    <header role="banner">
-        <a class="logo" href="{{ '/' | relative_url }}">{{site.author.name}}</a>
-        <div class="header-right">
-            <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch to light theme">
-                <span id="theme-icon" aria-hidden="true">Light</span>
-            </button>
-            <nav class="social-links" aria-label="Social media links">
-                <a href="https://x.com/thadigitalguru" target="_blank" rel="noopener noreferrer"
-                    aria-label="Follow on X (Twitter)">X</a>
-                <a href="https://www.linkedin.com/in/titus-kores-610201200/" target="_blank" rel="noopener noreferrer"
-                    aria-label="Connect on LinkedIn">LINKEDIN</a>
-                <a href="https://github.com/thadigitalguru" target="_blank" rel="noopener noreferrer"
-                    aria-label="View GitHub profile">GITHUB</a>
-            </nav>
-            <button class="menu-toggle" type="button" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
-                <span aria-hidden="true">☰</span>
-            </button>
-            <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
-                <a href="/">Home</a>
-
-                <a href="/services.html">Services</a>
-                <a href="/blog.html">Blog</a>
-                <a href="/contact.html">Contact</a>
-            </nav>
-        </div>
-    </header>
+    {% include gtm_body.html %}
+    <a class="skip-link" href="#main">Skip to main content</a>
+    {% include nav.html %}
 
     <main id="main" tabindex="-1">
         <section class="hero" aria-labelledby="intro-heading">
@@ -700,29 +407,8 @@
         </section>
     </main>
 
-    <footer role="contentinfo">
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="/blog.html" aria-label="Visit blog">Blog</a>
-                <a href="https://github.com/thadigitalguru" target="_blank" rel="noopener noreferrer"
-                    aria-label="GitHub profile">GitHub</a>
-                <a href="https://x.com/thadigitalguru" target="_blank" rel="noopener noreferrer"
-                    aria-label="X (Twitter) profile">X</a>
-                <a href="https://www.linkedin.com/in/titus-kores-610201200/" target="_blank" rel="noopener noreferrer"
-                    aria-label="LinkedIn profile">LinkedIn</a>
-                <a href="/feed.xml" aria-label="RSS feed">RSS</a>
-            </div>
-            <p class="footer-copyright">© 2024 Titus Kores. All rights reserved.</p>
-        </div>
-    </footer>
-
-
-    <noscript>
-        <p style="text-align:center;padding:1rem;background:var(--bg-secondary)">Please enable JavaScript for the best
-            experience.</p>
-    </noscript>
-
-    <script src="{{ '/assets/js/theme.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+    {% include footer.html %}
+    {% include footer-scripts.html %}
 </body>
 
 </html>
