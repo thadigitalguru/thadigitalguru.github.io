@@ -1,0 +1,279 @@
+.services-page {
+  --service-bg: #0a0a0a;
+  --service-surface: #131313;
+  --service-text: #fafafa;
+  --service-muted: #bdbdbd;
+  --service-border: #373737;
+  --service-accent: #ff702a;
+  --service-button-bg: #ff702a;
+  --service-glow: #2b170e;
+  color: var(--service-text);
+  background: var(--service-bg);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.65;
+}
+
+[data-theme="light"] .services-page {
+  --service-bg: #faf7f3;
+  --service-surface: #fff;
+  --service-text: #1b1511;
+  --service-muted: #5c4b42;
+  --service-border: #d5c8be;
+  --service-accent: #ad3709;
+  --service-glow: #ffe5d1;
+}
+
+.services-wrap {
+  width: min(100% - clamp(2rem, 4.2vw, 5.5rem), 117rem);
+  margin-inline: auto;
+}
+
+.service-overview {
+  padding-block: clamp(2rem, 2vw, 2.75rem) clamp(2.5rem, 4vw, 5.5rem);
+}
+
+.services-page :is(h1, h2, h3, h4) {
+  color: var(--service-text);
+  font-weight: 750;
+  line-height: 1.1;
+  letter-spacing: -.035em;
+}
+
+.services-page h1,
+.service-inquiry h2 {
+  margin-block: clamp(1.25rem, 2.2vw, 2.75rem);
+  font-size: clamp(2.35rem, 3.4vw, 4.5rem);
+}
+
+.service-kicker {
+  margin: 0;
+  color: var(--service-accent);
+  font-size: clamp(.76rem, .87vw, 1.125rem);
+  font-weight: 750;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.service-lead,
+.service-choice > p:not(.service-kicker) {
+  color: var(--service-muted);
+  font-size: clamp(1.05rem, 1.37vw, 1.8rem);
+  line-height: 1.6;
+}
+
+.service-lead {
+  max-width: 64ch;
+}
+
+.service-choices,
+.service-engagements,
+.service-related {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  gap: clamp(1rem, 1.65vw, 2.25rem);
+}
+
+.service-choices {
+  margin-top: clamp(2.25rem, 3vw, 4rem);
+}
+
+.service-choice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(1rem, 1.65vw, 2.25rem);
+  min-width: 0;
+  min-height: clamp(18rem, 22.4vw, 29rem);
+  padding: clamp(1.5rem, 2.3vw, 3rem);
+  border: 1px solid var(--service-border);
+  border-radius: clamp(1.15rem, 1.65vw, 2.25rem);
+  background: var(--service-surface);
+}
+
+.service-choice:first-child,
+.service-choice:focus-within {
+  border-color: var(--service-accent);
+}
+
+.service-choice .service-kicker {
+  text-transform: none;
+  letter-spacing: .08em;
+}
+
+.service-choice h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 1.73vw, 2.3rem);
+}
+
+.service-choice > p:not(.service-kicker) {
+  margin: .4rem 0 0;
+  font-size: clamp(1rem, 1.18vw, 1.5rem);
+}
+
+.service-link,
+.services-page .service-engagements a {
+  color: var(--service-text);
+  text-decoration: underline;
+  text-underline-offset: .35em;
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .7rem;
+  min-height: 44px;
+  padding-block: .5rem;
+  font-size: clamp(1rem, 1.07vw, 1.35rem);
+  font-weight: 680;
+  line-height: 1.35;
+}
+
+.service-choice .service-link {
+  margin-top: auto;
+  padding-bottom: .8rem;
+  border-bottom: 1px solid var(--service-border);
+  text-decoration: none;
+}
+
+.services-page a:hover {
+  color: var(--service-accent);
+}
+
+.services-page :is(a, summary):focus-visible {
+  outline-color: var(--service-accent);
+}
+
+.services-page .fa-arrow-up {
+  flex: none;
+  font-size: .8em;
+  transform: rotate(45deg);
+}
+
+.service-section,
+.service-related,
+.service-faq {
+  padding-block: clamp(2.5rem, 5vw, 6rem);
+  border-top: 1px solid var(--service-border);
+}
+
+.service-section h2,
+.service-related h2,
+.service-faq h2 {
+  margin-block: .75rem 1.25rem;
+  font-size: clamp(1.85rem, 2.7vw, 3.25rem);
+}
+
+.service-engagements {
+  margin-block: 2.25rem 3.5rem;
+}
+
+.service-engagements article {
+  padding: clamp(1.25rem, 1.8vw, 2rem);
+  border: 1px solid var(--service-border);
+  border-radius: 1.15rem;
+  background: var(--service-surface);
+}
+
+.service-engagements h3,
+.service-process h4 {
+  font-size: clamp(1.15rem, 1.4vw, 1.65rem);
+}
+
+.service-engagements p,
+.service-process p,
+.service-related p:not(.service-kicker),
+.service-faq details p {
+  color: var(--service-muted);
+}
+
+.service-process {
+  max-width: 64rem;
+}
+
+.service-process h3 {
+  margin-bottom: 1.25rem;
+  font-size: clamp(1.55rem, 2.2vw, 2.75rem);
+}
+
+.service-process ol {
+  margin: 0;
+  padding-inline-start: 2rem;
+}
+
+.service-process li {
+  padding: clamp(1rem, 1.6vw, 2rem) 0 1rem .75rem;
+  border-top: 1px solid var(--service-border);
+}
+
+.service-process li::marker {
+  color: var(--service-accent);
+  font-weight: 750;
+}
+
+.service-process p {
+  margin: 0;
+}
+
+.service-related section {
+  scroll-margin-block-start: 1.5rem;
+}
+
+.service-related h2 {
+  font-size: clamp(1.5rem, 2.04vw, 2.5rem);
+}
+
+.service-faq details {
+  max-width: 64rem;
+  border-bottom: 1px solid var(--service-border);
+}
+
+.service-faq summary {
+  min-height: 44px;
+  padding-block: .75rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.service-inquiry {
+  padding-block: clamp(4rem, 7.5vw, 10rem);
+  text-align: center;
+  background: radial-gradient(ellipse at 50% 100%, var(--service-glow), transparent 78%), var(--service-bg);
+}
+
+.service-inquiry .service-lead {
+  margin-inline: auto;
+  max-width: 64ch;
+}
+
+.service-button,
+.service-button:hover {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  min-height: 44px;
+  padding: clamp(.85rem, 1.3vw, 1.65rem) clamp(1.3rem, 2vw, 2.5rem);
+  border-radius: 99rem;
+  background: var(--service-button-bg);
+  color: #1b1009;
+  font-size: clamp(1rem, 1.17vw, 1.5rem);
+  font-weight: 750;
+}
+
+.services-page .service-button:hover {
+  color: #1b1009;
+  background: #ff8d55;
+  text-decoration: underline;
+}
+
+.services-page + .site-footer {
+  margin-top: 0;
+}
+
+@media (max-width: 650px) {
+  .service-choice {
+    min-height: 0;
+  }
+}

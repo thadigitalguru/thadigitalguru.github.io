@@ -1,96 +1,129 @@
 ---
-layout: page
-title: Services
-subtitle: Professional SEO Services
+layout: base
+title: Website Design, SEO Consulting & AI Automation
+share-title: Website Design, SEO Consulting & AI Automation | Titus Kores
+description: Work with Titus Kores on website design, technical SEO, visibility in Google and AI search, or practical AI automation.
+css:
+  - /assets/css/services.css
 ---
 
-<div class="services-page">
-  <div class="services-container">
-    <div class="services-intro">
-      <h2>An overview of my leading SEO Services:</h2>
-      <div class="title-underline"></div>
+<main id="main" tabindex="-1" class="services-page">
+  <section class="services-wrap service-overview" aria-labelledby="services-title">
+    <p class="service-kicker">01 / What I can help with</p>
+    <h1 id="services-title">Start with what you need.</h1>
+    <p class="service-lead">Three core services. Choose one, or connect them when it makes sense.</p>
+
+    <div class="service-choices">
+      <article class="service-choice">
+        <p class="service-kicker">01 / Website design</p>
+        <h2>I need a better website.</h2>
+        <p>A website that explains your business clearly and makes it easy to enquire.</p>
+        <a class="service-link" href="#website-design">See how I can help with your website <span class="fas fa-arrow-up" aria-hidden="true"></span></a>
+      </article>
+
+      <article class="service-choice">
+        <p class="service-kicker">02 / SEO / GEO</p>
+        <h2>I want customers to find us.</h2>
+        <p>Help Google and AI search understand your services, and help visitors decide what to do next.</p>
+        <a class="service-link" href="#seo-consulting">Explore SEO consulting <span class="fas fa-arrow-up" aria-hidden="true"></span></a>
+      </article>
+
+      <article class="service-choice">
+        <p class="service-kicker">03 / AI tools &amp; automation</p>
+        <h2>I want a simpler way to work.</h2>
+        <p>Turn a repetitive task into a practical tool, with clear inputs, useful outputs and human review.</p>
+        <a class="service-link" href="#ai-automation">Explore AI tools &amp; automation <span class="fas fa-arrow-up" aria-hidden="true"></span></a>
+      </article>
+    </div>
+  </section>
+
+  <section id="seo-consulting" class="services-wrap service-section" aria-labelledby="consulting-title">
+    <p class="service-kicker">02 / SEO / GEO</p>
+    <h2 id="consulting-title">SEO Consulting</h2>
+    <p class="service-lead">I help SaaS and e-commerce teams find what’s holding them back in Google and AI search, then turn the evidence into prioritized fixes and a plan your team can use.</p>
+    <a class="service-link" href="{{ '/contact.html' | relative_url }}">Get a free 15-minute SEO teardown <span class="fas fa-arrow-up" aria-hidden="true"></span></a>
+
+    <div class="service-engagements">
+      <article>
+        <h3>Technical SEO audit</h3>
+        <p>Find issues with crawling, indexing, site architecture and Core Web Vitals. Get a prioritized list of fixes your developers can act on and a walkthrough.</p>
+      </article>
+      <article>
+        <h3>AI visibility sprint</h3>
+        <p>Set a citation baseline, compare visibility with competitors, and improve pages that answer your customers’ questions.</p>
+        <a href="{{ '/blog/2025/11/19/guide-to-getting-cited-in-ai-answers/' | relative_url }}">Read the AI citation guide</a>
+      </article>
+      <article>
+        <h3>Search Console + Python sprint</h3>
+        <p>Use query data to find opportunities and automate recurring analysis. Get a dashboard and a prioritized test backlog.</p>
+        <a href="{{ '/blog/2024/10/08/google-search-console-regex-guide/' | relative_url }}">Read the Search Console regex guide</a>
+      </article>
     </div>
 
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2">
-            <path
-              d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
-            </path>
-          </svg>
-        </div>
-        <h3>Technical SEO Consultant</h3>
-        <p>A technical SEO consultation is an examination of the overall health and functionality of your website.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2">
-            <circle cx="9" cy="21" r="1"></circle>
-            <circle cx="20" cy="21" r="1"></circle>
-            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-          </svg>
-        </div>
-        <h3>Ecommerce SEO</h3>
-        <p>It can very difficult to compete online for your Ecommerce store. Fortunately with a dedicated SEO campaign,
-          I can help you rank your store higher and get more leads.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2">
-            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-          </svg>
-        </div>
-        <h3>Google SEO</h3>
-        <p>Achieving higher rankings in Google for your most important keywords with the help of leading SEO Expert.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg>
-        </div>
-        <h3>Local SEO Services</h3>
-        <p>Local SEO to ensure your business can be found quickly & efficiently by local customers could be the key to
-          success.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="3"></circle>
-            <path
-              d="M12 1v6m0 6v6m8.66-15.66l-4.24 4.24m-4.24 4.24l-4.24 4.24m15.66.18l-4.24-4.24m-4.24-4.24L3.34 3.34">
-            </path>
-          </svg>
-        </div>
-        <h3>Link Building Services</h3>
-        <p>An in-depth and thorough link building service to help give your website the extra help it may need to
-          succeed in Google.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="2" y1="12" x2="22" y2="12"></line>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-          </svg>
-        </div>
-        <h3>International SEO</h3>
-        <p>If your website is targeting an international audience, it's essential to deliver the right information to
-          Search Engines in order to be shown in your chosen locations around the world.</p>
-      </div>
+    <div class="service-process" aria-labelledby="process-title">
+      <h3 id="process-title">My Process</h3>
+      <ol>
+        <li>
+          <h4>Discovery &amp; Research</h4>
+          <p>I dive deep into your business—reviewing your SEO history, competitive landscape, internal expertise, and content strategy to pinpoint your unique value.</p>
+        </li>
+        <li>
+          <h4>Competitive Analysis</h4>
+          <p>I uncover organic opportunities by analyzing how your audience finds content and what competitors are doing across both traditional search engines and AI platforms.</p>
+        </li>
+        <li>
+          <h4>E-E-A-T Strategy</h4>
+          <p>Together, we build a future-proof, multimodal strategy centered on E-E-A-T to ensure your content thrives across search, social, and AI.</p>
+        </li>
+        <li>
+          <h4>Content &amp; Organic Growth</h4>
+          <p>I empower your team to create original, insightful content that drives natural organic growth and showcases your true expertise.</p>
+        </li>
+        <li>
+          <h4>Technical SEO &amp; Architecture</h4>
+          <p>I optimize your site’s technical foundation—improving crawlability, performance, and architecture while removing underperforming content—so search engines and AI can easily find your best work.</p>
+        </li>
+      </ol>
     </div>
+  </section>
+
+  <div class="services-wrap service-related">
+    <section id="website-design" aria-labelledby="website-title">
+      <p class="service-kicker">Website design</p>
+      <h2 id="website-title">A clearer path from visit to inquiry</h2>
+      <p>Start with the pages visitors need most, explain what you offer, and make the next step obvious on mobile and desktop.</p>
+      <a class="service-link" href="mailto:{{ site.author.email }}?subject=Website%20design%20inquiry">Discuss your website <span class="fas fa-arrow-up" aria-hidden="true"></span></a>
+    </section>
+    <section id="ai-automation" aria-labelledby="automation-title">
+      <p class="service-kicker">AI tools &amp; automation</p>
+      <h2 id="automation-title">Make one repeated task easier</h2>
+      <p>Bring a recurring task such as grouping search queries or preparing reports. We’ll define the inputs, what a useful result looks like, and where human review belongs.</p>
+      <a class="service-link" href="mailto:{{ site.author.email }}?subject=Automation%20inquiry">Discuss a workflow <span class="fas fa-arrow-up" aria-hidden="true"></span></a>
+    </section>
   </div>
-</div>
+
+  <section class="services-wrap service-faq" aria-labelledby="faq-title">
+    <h2 id="faq-title">Frequently asked questions</h2>
+    <details>
+      <summary>How soon will I see results?</summary>
+      <p>It depends on the problem, how quickly changes go live, and when search systems pick them up. We’ll agree on success measures and a review schedule at the start.</p>
+    </details>
+    <details>
+      <summary>Do you offer link building or local SEO?</summary>
+      <p>I can address link building or local search when it supports a broader engagement.</p>
+    </details>
+    <details>
+      <summary>How do we start?</summary>
+      <p>Send me one URL and one business goal. For SEO inquiries, I offer a free 15-minute teardown. We’ll agree on scope and timing before any paid work begins.</p>
+    </details>
+  </section>
+
+  <section id="service-inquiry" class="service-inquiry" aria-labelledby="inquiry-title">
+    <div class="services-wrap">
+      <p class="service-kicker">Let’s start with your need</p>
+      <h2 id="inquiry-title">What would you like to improve?</h2>
+      <p class="service-lead">You don’t need a technical brief or a package name. Tell me the problem, and we’ll discuss a sensible next step.</p>
+      <a class="service-button" href="mailto:{{ site.author.email }}?subject=Services%20inquiry&amp;body=Website%20URL%3A%0AWhat%20I%27d%20like%20to%20improve%3A">Discuss your needs <span class="fas fa-arrow-up" aria-hidden="true"></span></a>
+    </div>
+  </section>
+</main>

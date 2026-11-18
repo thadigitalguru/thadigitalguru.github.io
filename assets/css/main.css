@@ -107,8 +107,8 @@ img {
 }
 
 .theme-toggle:hover {
-  background: var(--border-color);
-  color: var(--bg-primary);
+  background: var(--bg-secondary);
+  border-color: var(--accent-color);
 }
 
 .cta-button,
@@ -222,31 +222,6 @@ header {
   text-decoration: underline;
 }
 
-/* Services Page Styles */
-.services-page {
-  padding: 4rem 0;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  margin-bottom: 4rem;
-}
-
-.service-card {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  padding: 3.5rem 2.5rem;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--accent-color);
-}
-
 /* Blog Styles */
 .category-section {
   margin-block: 2rem;
@@ -322,9 +297,5 @@ header {
 @media (max-width: 768px) {
   header {
     padding: 1rem 2rem;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
   }
 }
