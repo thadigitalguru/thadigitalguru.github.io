@@ -114,8 +114,8 @@ js:
   /* Article updates */
   .newsletter-section {
     background: var(--bg-secondary);
-    border: 2px solid var(--border-color);
-    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius);
     padding: 2rem;
     margin-bottom: 3rem;
     text-align: center;
@@ -123,7 +123,6 @@ js:
   }
 
   .newsletter-content h2 {
-    color: var(--accent-color);
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
   }
@@ -131,26 +130,6 @@ js:
   .newsletter-content p {
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
-  }
-
-  .newsletter-button {
-    display: inline-block;
-    padding: 0.75rem 2rem;
-    background: var(--accent-color);
-    color: var(--bg-primary);
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: inherit;
-    font-size: 1rem;
-  }
-
-  .newsletter-button:hover {
-    background: var(--accent-hover);
-    color: var(--bg-primary);
-    transform: translateY(-2px);
   }
 
   /* Category Filters */
@@ -164,8 +143,8 @@ js:
 
   .filter-button {
     padding: 0.5rem 1.25rem;
-    border: 2px solid var(--border-color);
-    border-radius: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 99rem;
     background: transparent;
     color: var(--text-primary);
     font-family: inherit;
@@ -174,11 +153,14 @@ js:
     transition: all 0.3s ease;
   }
 
-  .filter-button:hover,
-  .filter-button[aria-pressed="true"] {
-    background: var(--accent-color);
+  .filter-button:hover {
     border-color: var(--accent-color);
-    color: var(--bg-primary);
+  }
+
+  .filter-button[aria-pressed="true"] {
+    background: var(--button-bg);
+    border-color: var(--button-bg);
+    color: var(--button-text);
   }
 
   .blog-intro {
@@ -204,10 +186,10 @@ js:
 
   .post-card {
     background: var(--bg-secondary);
-    border: 2px solid transparent;
-    border-radius: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius);
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease;
     height: fit-content;
     opacity: 0;
     animation: fadeInUp 0.6s ease forwards;
@@ -239,7 +221,6 @@ js:
 
   .post-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 30px var(--shadow);
     border-color: var(--accent-color);
   }
 
@@ -291,7 +272,7 @@ js:
   }
 
   .post-card-title a:hover {
-    color: var(--accent-color, #007acc);
+    color: var(--accent-color);
   }
 
   .post-card-excerpt {
@@ -330,9 +311,10 @@ js:
   }
 
   .read-more {
-    color: var(--accent-color, #007acc);
-    text-decoration: none;
-    font-weight: 500;
+    color: var(--text-primary);
+    text-decoration: underline;
+    text-underline-offset: .35em;
+    font-weight: 680;
     display: flex;
     align-items: center;
     gap: 0.5rem;

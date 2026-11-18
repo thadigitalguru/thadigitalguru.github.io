@@ -1,24 +1,29 @@
-/* Global variables and defaults */
+/* Shared typography and palette from the Services page */
 :root {
-  --bg-primary: #000000;
-  --bg-secondary: #0a0a0a;
-  --text-primary: #f5f5f5;
-  --text-secondary: #b0b0b0;
-  --border-color: #444;
-  --accent-color: #4A9EFF;
-  --accent-hover: #7BB8FF;
-  --shadow: rgba(255, 255, 255, 0.1);
+  color-scheme: dark;
+  --site-font: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #131313;
+  --text-primary: #fafafa;
+  --text-secondary: #bdbdbd;
+  --border-color: #373737;
+  --accent-color: #ff702a;
+  --accent-hover: #ff9a65;
+  --button-bg: #ff702a;
+  --button-hover: #ff8d55;
+  --button-text: #1b1009;
+  --card-radius: clamp(1.15rem, 1.65vw, 2.25rem);
 }
 
 [data-theme=light] {
-  --bg-primary: #f5f5f5;
+  color-scheme: light;
+  --bg-primary: #faf7f3;
   --bg-secondary: #fff;
-  --text-primary: #000;
-  --text-secondary: #555;
-  --border-color: #ddd;
-  --accent-color: #005eb8;
-  --accent-hover: #00478a;
-  --shadow: rgba(0, 0, 0, 0.1);
+  --text-primary: #1b1511;
+  --text-secondary: #5c4b42;
+  --border-color: #d5c8be;
+  --accent-color: #ad3709;
+  --accent-hover: #872802;
 }
 
 * {
@@ -29,10 +34,10 @@
 
 html,
 body {
-  font-family: 'Courier New', Courier, Monaco, Menlo, Consolas, monospace;
+  font-family: var(--site-font);
   background: var(--bg-primary);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.65;
   margin: 0;
   transition: background 0.3s, color 0.3s;
 }
@@ -43,7 +48,18 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--accent-color);
+  color: var(--text-primary);
+  font-weight: 750;
+  line-height: 1.1;
+  letter-spacing: -.035em;
+}
+
+.page-heading h1 {
+  font-size: clamp(2.35rem, 3.4vw, 4.5rem);
+}
+
+.page-subheading {
+  color: var(--text-secondary);
 }
 
 a {
@@ -56,12 +72,17 @@ a:hover {
   color: var(--accent-hover);
 }
 
+:is(.hero-content, .post-content, .contact-card, .contact-note, .category-posts) a {
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+
 img {
   max-width: 100%;
   height: auto;
 }
 
-:where(a, button, input, summary):focus-visible {
+:is(a, button, input, summary):focus-visible {
   outline: 3px solid var(--accent-color);
   outline-offset: 4px;
 }
@@ -97,11 +118,12 @@ img {
 /* Common Components */
 .theme-toggle {
   padding: .5rem 1rem;
-  border: 2px solid var(--border-color);
-  border-radius: 8px;
-  background: 0 0;
+  border: 1px solid var(--border-color);
+  border-radius: 99rem;
+  background: transparent;
   color: var(--text-primary);
-  font-weight: 500;
+  font: inherit;
+  font-weight: 650;
   cursor: pointer;
   transition: all .3s;
 }
@@ -112,22 +134,47 @@ img {
 }
 
 .cta-button,
-.contact-button {
+.contact-button,
+.newsletter-button {
   display: inline-block;
-  padding: 1rem 2rem;
-  border: 2px solid var(--border-color);
-  border-radius: 8px;
+  padding: .85rem 1.65rem;
+  border: 1px solid transparent;
+  border-radius: 99rem;
   text-decoration: none;
-  color: var(--text-primary);
-  font-weight: 600;
-  transition: all .3s;
-  background: transparent;
+  color: var(--button-text);
+  font-weight: 750;
+  text-align: center;
+  background: var(--button-bg);
+  transition: background-color .2s;
 }
 
 .cta-button:hover,
-.contact-button:hover {
-  background: var(--border-color);
-  color: var(--bg-primary);
+.contact-button:hover,
+.newsletter-button:hover {
+  background: var(--button-hover);
+  color: var(--button-text);
+  text-decoration: underline;
+}
+
+.tag-btn.btn-primary {
+  margin: 0 .2rem .4rem 0;
+  border-color: var(--border-color);
+  border-radius: 99rem;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.tag-btn.btn-primary:hover,
+.tag-btn.btn-primary:not(:disabled):active {
+  border-color: var(--accent-color);
+  background: var(--bg-secondary);
+  color: var(--accent-color);
+}
+
+.tag-btn.btn-primary:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+  box-shadow: none;
 }
 
 /* Layout Elements */
@@ -138,14 +185,14 @@ img {
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1.25rem clamp(1rem, 4vw, 4rem);
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
   border-bottom: 1px solid var(--border-color);
 }
 
 .site-brand {
   color: var(--text-primary);
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 750;
 }
 
 .site-nav {
@@ -262,8 +309,8 @@ header {
 
 .contact-card {
   background: var(--bg-secondary);
-  padding: 2.5rem;
-  border-radius: 8px;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  border-radius: var(--card-radius);
   border: 1px solid var(--border-color);
 }
 

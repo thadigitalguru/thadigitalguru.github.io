@@ -1,25 +1,8 @@
 .services-page {
-  --service-bg: #0a0a0a;
-  --service-surface: #131313;
-  --service-text: #fafafa;
-  --service-muted: #bdbdbd;
-  --service-border: #373737;
-  --service-accent: #ff702a;
-  --service-button-bg: #ff702a;
   --service-glow: #2b170e;
-  color: var(--service-text);
-  background: var(--service-bg);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.65;
 }
 
 [data-theme="light"] .services-page {
-  --service-bg: #faf7f3;
-  --service-surface: #fff;
-  --service-text: #1b1511;
-  --service-muted: #5c4b42;
-  --service-border: #d5c8be;
-  --service-accent: #ad3709;
   --service-glow: #ffe5d1;
 }
 
@@ -32,13 +15,6 @@
   padding-block: clamp(2rem, 2vw, 2.75rem) clamp(2.5rem, 4vw, 5.5rem);
 }
 
-.services-page :is(h1, h2, h3, h4) {
-  color: var(--service-text);
-  font-weight: 750;
-  line-height: 1.1;
-  letter-spacing: -.035em;
-}
-
 .services-page h1,
 .service-inquiry h2 {
   margin-block: clamp(1.25rem, 2.2vw, 2.75rem);
@@ -47,7 +23,7 @@
 
 .service-kicker {
   margin: 0;
-  color: var(--service-accent);
+  color: var(--accent-color);
   font-size: clamp(.76rem, .87vw, 1.125rem);
   font-weight: 750;
   letter-spacing: .12em;
@@ -56,7 +32,7 @@
 
 .service-lead,
 .service-choice > p:not(.service-kicker) {
-  color: var(--service-muted);
+  color: var(--text-secondary);
   font-size: clamp(1.05rem, 1.37vw, 1.8rem);
   line-height: 1.6;
 }
@@ -85,14 +61,14 @@
   min-width: 0;
   min-height: clamp(18rem, 22.4vw, 29rem);
   padding: clamp(1.5rem, 2.3vw, 3rem);
-  border: 1px solid var(--service-border);
-  border-radius: clamp(1.15rem, 1.65vw, 2.25rem);
-  background: var(--service-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-radius);
+  background: var(--bg-secondary);
 }
 
 .service-choice:first-child,
 .service-choice:focus-within {
-  border-color: var(--service-accent);
+  border-color: var(--accent-color);
 }
 
 .service-choice .service-kicker {
@@ -112,7 +88,7 @@
 
 .service-link,
 .services-page .service-engagements a {
-  color: var(--service-text);
+  color: var(--text-primary);
   text-decoration: underline;
   text-underline-offset: .35em;
 }
@@ -132,16 +108,16 @@
 .service-choice .service-link {
   margin-top: auto;
   padding-bottom: .8rem;
-  border-bottom: 1px solid var(--service-border);
+  border-bottom: 1px solid var(--border-color);
   text-decoration: none;
 }
 
 .services-page a:hover {
-  color: var(--service-accent);
+  color: var(--accent-color);
 }
 
 .services-page :is(a, summary):focus-visible {
-  outline-color: var(--service-accent);
+  outline-color: var(--accent-color);
 }
 
 .services-page .fa-arrow-up {
@@ -154,7 +130,7 @@
 .service-related,
 .service-faq {
   padding-block: clamp(2.5rem, 5vw, 6rem);
-  border-top: 1px solid var(--service-border);
+  border-top: 1px solid var(--border-color);
 }
 
 .service-section h2,
@@ -170,9 +146,9 @@
 
 .service-engagements article {
   padding: clamp(1.25rem, 1.8vw, 2rem);
-  border: 1px solid var(--service-border);
+  border: 1px solid var(--border-color);
   border-radius: 1.15rem;
-  background: var(--service-surface);
+  background: var(--bg-secondary);
 }
 
 .service-engagements h3,
@@ -184,7 +160,7 @@
 .service-process p,
 .service-related p:not(.service-kicker),
 .service-faq details p {
-  color: var(--service-muted);
+  color: var(--text-secondary);
 }
 
 .service-process {
@@ -203,11 +179,11 @@
 
 .service-process li {
   padding: clamp(1rem, 1.6vw, 2rem) 0 1rem .75rem;
-  border-top: 1px solid var(--service-border);
+  border-top: 1px solid var(--border-color);
 }
 
 .service-process li::marker {
-  color: var(--service-accent);
+  color: var(--accent-color);
   font-weight: 750;
 }
 
@@ -225,7 +201,7 @@
 
 .service-faq details {
   max-width: 64rem;
-  border-bottom: 1px solid var(--service-border);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .service-faq summary {
@@ -238,7 +214,7 @@
 .service-inquiry {
   padding-block: clamp(4rem, 7.5vw, 10rem);
   text-align: center;
-  background: radial-gradient(ellipse at 50% 100%, var(--service-glow), transparent 78%), var(--service-bg);
+  background: radial-gradient(ellipse at 50% 100%, var(--service-glow), transparent 78%), var(--bg-primary);
 }
 
 .service-inquiry .service-lead {
@@ -256,15 +232,15 @@
   min-height: 44px;
   padding: clamp(.85rem, 1.3vw, 1.65rem) clamp(1.3rem, 2vw, 2.5rem);
   border-radius: 99rem;
-  background: var(--service-button-bg);
-  color: #1b1009;
+  background: var(--button-bg);
+  color: var(--button-text);
   font-size: clamp(1rem, 1.17vw, 1.5rem);
   font-weight: 750;
 }
 
 .services-page .service-button:hover {
-  color: #1b1009;
-  background: #ff8d55;
+  color: var(--button-text);
+  background: var(--button-hover);
   text-decoration: underline;
 }
 

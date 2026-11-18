@@ -111,23 +111,20 @@
 
         .hero {
             background: var(--bg-secondary);
-            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--card-radius);
             padding: 4rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-            box-shadow: 0 2px 8px var(--shadow);
             margin-bottom: 4rem;
             transition: background .3s
         }
 
         .hero-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            min-height: 6rem
+            font-size: clamp(2.35rem, 3.4vw, 4.5rem);
+            margin-bottom: 1.5rem;
         }
 
         .engagement-summary {
@@ -156,40 +153,15 @@
             color: var(--text-secondary)
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            font-weight: 600;
-            position: relative;
-            overflow: hidden;
-            z-index: 1
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--accent-color);
-            transition: left 0.3s ease;
-            z-index: -1
-        }
-
-        .cta-button:hover::before {
-            left: 0
-        }
-
-        .cta-button:hover {
-            color: var(--bg-primary);
-            border-color: var(--accent-color)
-        }
-
         .hero-content p {
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
             color: var(--text-secondary)
+        }
+
+        .hero-content a {
+            display: inline-block;
+            margin-inline-end: .75rem;
         }
 
         .hero-image {
@@ -202,8 +174,7 @@
         .hero-image img {
             width: 100%;
             max-width: 400px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px var(--shadow)
+            border-radius: var(--card-radius);
         }
 
 
@@ -214,7 +185,6 @@
 
         .section-title {
             font-size: 2rem;
-            font-weight: 700;
             margin-bottom: 2rem
         }
 
@@ -226,12 +196,11 @@
 
         .article-card {
             background: var(--bg-secondary);
-            border-radius: 12px;
+            border-radius: var(--card-radius);
             padding: 2rem;
-            box-shadow: 0 2px 8px var(--shadow);
-            transition: transform .3s, box-shadow .3s, border-color .3s;
+            transition: transform .3s, border-color .3s;
             display: block;
-            border: 2px solid transparent;
+            border: 1px solid var(--border-color);
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.6s ease forwards
@@ -276,7 +245,6 @@
 
         .article-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 8px 24px var(--shadow);
             border-color: var(--accent-color)
         }
 
@@ -316,7 +284,8 @@
 
         .tag {
             padding: .25rem .75rem;
-            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            border-radius: 99rem;
             background: var(--bg-primary);
             font-size: .85rem;
             color: var(--text-secondary)
@@ -330,10 +299,6 @@
             .hero {
                 grid-template-columns: 1fr;
                 padding: 2rem
-            }
-
-            .hero-content h1 {
-                font-size: 2rem
             }
 
             .articles-grid {

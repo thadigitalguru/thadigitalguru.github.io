@@ -155,6 +155,11 @@ layout: base
 </script>
 
 <style>
+.post-breadcrumb {
+  padding: .75rem 1rem 0;
+  color: var(--text-secondary);
+}
+
 .post-header {
   padding: 2rem 0;
   border-bottom: 1px solid var(--border-color);
@@ -165,8 +170,7 @@ layout: base
 }
 
 .post-title {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: clamp(2rem, 3.4vw, 4.5rem);
   margin-bottom: 1rem;
   line-height: 1.2;
 }
@@ -179,42 +183,40 @@ layout: base
   gap: 1rem;
   margin-bottom: 1.35rem;
   padding: 1.25rem 1.35rem 1.3rem;
-  border: 2px solid var(--border-color);
-  border-radius: 1.9rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-radius);
   background: var(--bg-secondary);
 }
 
 .article-summary-tools__label {
-  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-  font-size: 1.08rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-size: .875rem;
+  font-weight: 750;
+  letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--text-primary);
+  color: var(--accent-color);
   white-space: nowrap;
 }
 
 .article-summary-tools__buttons {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 0.8rem;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   min-width: 0;
 }
 
 .article-summary-tools__button,
 .article-summary-tools__copy {
-  --tool-accent: #4a9eff;
+  --tool-accent: var(--accent-color);
   width: var(--tool-width, auto);
   max-width: 100%;
-  border: 2px solid var(--border-color);
-  border-radius: 1.35rem;
+  border: 1px solid var(--border-color);
+  border-radius: 99rem;
   background: var(--bg-primary);
   color: var(--text-primary);
   padding: 0.8rem 1rem 0.8rem 0.95rem;
   font: inherit;
-  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   font-weight: 500;
   letter-spacing: 0.01em;
   cursor: pointer;
@@ -227,7 +229,7 @@ layout: base
 
 .article-summary-tools__button:hover,
 .article-summary-tools__copy:hover {
-  border-color: var(--text-primary);
+  border-color: var(--accent-color);
   background: var(--bg-secondary);
   transform: translateY(-1px);
 }
@@ -280,10 +282,9 @@ layout: base
 }
 
 .article-summary-tools__text {
-  font-size: 1.34rem;
-  line-height: 1;
+  font-size: 1rem;
+  line-height: 1.35;
   color: inherit;
-  opacity: 0.78;
 }
 
 .article-summary-tools__button[data-tool-name="Grok"] .article-summary-tools__icon svg {
@@ -385,7 +386,7 @@ layout: base
 .author-bio {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
-  border-radius: 0.5rem;
+  border-radius: var(--card-radius);
   padding: 2rem;
   margin-bottom: 2rem;
 }
@@ -429,10 +430,6 @@ layout: base
 }
 
 @media (max-width: 768px) {
-  .post-title {
-    font-size: 2rem;
-  }
-
   .article-summary-tools {
     align-items: flex-start;
   }
